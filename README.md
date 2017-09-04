@@ -3,8 +3,6 @@
 ---
 
 1. 必须确定机器中已经安装了JDK和Maven，以及一点点使用它们的知识；
-2. WEB服务端需要有关系型数据库才能启动；
-3. Java后台需要Hive、Elasticsearch、HBase。
 
 
 ### 运行样例代码
