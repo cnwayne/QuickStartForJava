@@ -9,11 +9,12 @@
 	</parent>
 	<artifactId>publish</artifactId>
 	<packaging>pom</packaging>
-	
-	
+
+
 	<modules>
-		<module>Container</module>
 		<module>Startup</module>
+		<module>Package</module>
+		<module>Container</module>
 	</modules>
 
 </project>
