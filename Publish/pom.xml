@@ -12,8 +12,7 @@
 
 
 	<modules>
-		<module>Startup</module>
-		<module>Package</module>
+		<module>Archive</module>
 		<module>Container</module>
 	</modules>
 
