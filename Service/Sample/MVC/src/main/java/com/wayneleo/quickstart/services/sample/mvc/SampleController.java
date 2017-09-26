@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.services.sample;
+package com.wayneleo.quickstart.services.sample.mvc;
 
 import java.util.Date;
 import org.springframework.web.bind.annotation.RequestMapping;

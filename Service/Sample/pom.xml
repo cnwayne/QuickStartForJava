@@ -4,22 +4,15 @@
 
 	<parent>
 		<groupId>com.wayneleo.quickstart</groupId>
-		<artifactId>quickstart</artifactId>
+		<artifactId>service</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service</artifactId>
+	<artifactId>service-sample</artifactId>
 	<packaging>pom</packaging>
 	
-	<dependencies>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>framework-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
-	
 	<modules>
-		<module>Sample</module>
+		<module>Dubbo</module>
+		<module>MVC</module>
 	</modules>
 
 </project>

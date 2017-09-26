@@ -4,22 +4,17 @@
 
 	<parent>
 		<groupId>com.wayneleo.quickstart</groupId>
-		<artifactId>quickstart</artifactId>
+		<artifactId>service-sample-dubbo</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>service-sample-dubbo-consumer</artifactId>
 	
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>framework-core</artifactId>
+			<artifactId>service-sample-dubbo-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
-	
-	<modules>
-		<module>Sample</module>
-	</modules>
 
 </project>

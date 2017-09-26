@@ -4,9 +4,17 @@
 
 	<parent>
 		<groupId>com.wayneleo.quickstart</groupId>
-		<artifactId>service</artifactId>
+		<artifactId>service-sample-dubbo</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service-sample</artifactId>
+	<artifactId>service-sample-dubbo-provider</artifactId>
+	
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>service-sample-dubbo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>

@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.services.sample;
+package com.wayneleo.quickstart.services.sample.mvc;
 
 import java.util.Date;
 import javax.persistence.Column;

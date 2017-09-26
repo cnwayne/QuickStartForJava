@@ -81,7 +81,7 @@
 							<outputDirectory>${project.build.directory}/QuickStart/conf</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../../Framework/core/src/main/resources</directory>
+									<directory>../../../Framework/core/src/main/resources</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
