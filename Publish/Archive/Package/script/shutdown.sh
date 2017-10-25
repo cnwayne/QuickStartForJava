@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 ## 脚本所在目录
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -10,9 +11,8 @@ APP_HOME=$( cd $CURRENT_DIR && cd ..;pwd)
 
 export APP_HOME
 
-SCRIPT="qids"
+SCRIPT="grji"
 export SCRIPT
 
 bash $APP_HOME/bin/setENV
-
 

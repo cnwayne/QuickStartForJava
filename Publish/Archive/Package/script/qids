@@ -4,16 +4,16 @@ CLAZZ_PATH=""
 append(){
     CLAZZ_PATH=$CLAZZ_PATH":"$1
 }
-LIBS="$APP_HOME$_DPDC_LIBS/*"
+LIBS="$APP_HOME$DPDC_LIBS/*"
 for _FILE in $LIBS; do
     append $_FILE
 done
-LIBS="$APP_HOME$_CORE_LIBS/*"
+LIBS="$APP_HOME$CORE_LIBS/*"
 for _FILE in $LIBS; do
     append $_FILE
 done
 LIBS=""
 
 ## 执行程序
-java -cp $CLAZZ_PATH $OPTS $ENTRY $DATE_TIME $ARGS &
+java -cp $CLAZZ_PATH $OPTS $ENTRY $DATE_TIME $ARGS 1>/dev/null 2>/dev/null &
 

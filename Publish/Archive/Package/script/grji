@@ -1,0 +1,8 @@
+
+curl -s -o /dev/null -X POST http://localhost:$PORT/server/shutdown?secret=$SECRET
+
+if [ $? -ne 0 ];then
+    echo "The server shutdown failed"
+else
+    echo "The server will shut down in 2 seconds"
+fi
