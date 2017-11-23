@@ -19,6 +19,7 @@
 	</dependencies>
 	
 	<modules>
+		<module>API</module>
 		<module>Sample</module>
 	</modules>
 

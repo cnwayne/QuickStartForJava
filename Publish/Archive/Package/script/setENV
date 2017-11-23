@@ -1,6 +1,6 @@
 
-##  应用名称
-APP_NAME="QuickStart"
+##  系统管理功能秘钥
+SECRET="4jg75AbeA3Saz3RzAtta"
 
 
 ##  监听端口
@@ -11,12 +11,19 @@ PORT="8080"
 OPTS=
 
 
-##  关机密码
-SECRET="wayneleo.com"
-
-
 ##  日志目录
 _LOG_DIR="${APP_HOME}/logs"
+
+
+#------------------------------------------------------
+
+
+##  应用名称
+APP_NAME="QuickStart"
+
+
+##  程序入口
+ENTRY="com.wayneleo.quickstart.startup.Bootstrap"
 
 
 ##  依赖Jar
@@ -28,14 +35,9 @@ CORE_LIBS="/core"
 
 
 ##  应用参数
-ARGS="--server.port=$PORT"
-ARGS="$ARGS --logging.config=$APP_HOME/conf/logback.xml"
-ARGS="$ARGS --logging.file=$_LOG_DIR/${APP_NAME}.log --shutdown.secret=$SECRET"
-ARGS="$ARGS --spring.config.location=file:$APP_HOME/conf/application.yml"
-
-
-##  程序入口
-ENTRY="com.wayneleo.quickstart.startup.Bootstrap"
+ARGS="--server.port=${PORT}"
+ARGS="$ARGS --logging.file=${_LOG_DIR}/${APP_NAME}.log --shutdown.secret=${SECRET}"
+ARGS="$ARGS --spring.config.location=file:${APP_HOME}/conf/application.yml"
 
 
 #------------------------------------------------------
@@ -49,5 +51,5 @@ export CORE_LIBS
 export ARGS
 export ENTRY
 
-bash $APP_HOME/bin/$SCRIPT
+bash $APP_HOME/bin/${SCRIPT}
 

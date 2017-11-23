@@ -30,7 +30,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.wayneleo.quickstart</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>publish-archive-bootstrap</artifactId>
 			<version>${project.version}</version>
 		</dependency>

@@ -6,17 +6,13 @@ public class BaseException extends RuntimeException {
     private static final long serialVersionUID = 7351576346012891586L;
     private int               code             = BaseCode.FAIL.code;
 
-    public BaseException( String msg ) {
-        super( msg );
-    }
-
-    public BaseException( String msg, int code ) {
+    public BaseException( int code, String msg ) {
         super( msg );
         this.code = code;
     }
 
-    public BaseException( String msg, Throwable e ) {
-        super( msg, e );
+    public BaseException( int code, Throwable e ) {
+        super( e );
     }
 
     public int getCode() {
@@ -27,4 +23,5 @@ public class BaseException extends RuntimeException {
     public String toString() {
         return this.getClass().getSimpleName() + "-" + code;
     }
+
 }

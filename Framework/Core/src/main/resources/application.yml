@@ -1,5 +1,6 @@
-logging:
-    path: /tmp/logs/ # 日志存放目录
+
+mgmt:
+    secret: 4jg75AbeA3Saz3RzAtta
 
 spring:
     datasource:
@@ -28,10 +29,11 @@ spring:
         module.name: QuickStart
         scan: com.wayneleo.quickstart
 
-HttpInvoker:
-    balanceHost: http://msm_gateway_balance:8080
+cache:
+    duration: 30000
 
-SyncHttpInvoker:
-    corePoolSize: 5
+threadPool:
+    corePoolSize: 2
     maxPoolSize: 10
-    keepAliveTime: 30
+    keepAliveTime: 60
+
