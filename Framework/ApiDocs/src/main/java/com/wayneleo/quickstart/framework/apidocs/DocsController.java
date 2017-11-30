@@ -14,7 +14,6 @@ public class DocsController {
         return model;
     }
     */
-
     @RequestMapping( "/docs" )
     public void docs( HttpServletResponse response ) throws IOException {
         response.sendRedirect( "/swagger-ui.html" );

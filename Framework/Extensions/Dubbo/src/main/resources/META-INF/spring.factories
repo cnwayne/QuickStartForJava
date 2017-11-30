@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.wayneleo.quickstart.framework.extension.dubbo.DubboConfigurationApplicationContextInitializer
+org.springframework.context.ApplicationListener=\
+com.wayneleo.quickstart.framework.extension.dubbo.DubboHolderListener
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.wayneleo.quickstart.framework.extension.dubbo.DubboAutoConfiguration

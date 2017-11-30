@@ -12,6 +12,7 @@
 
 
 	<modules>
+		<module>Configuration</module>
 		<module>Archive</module>
 		<module>Container</module>
 	</modules>

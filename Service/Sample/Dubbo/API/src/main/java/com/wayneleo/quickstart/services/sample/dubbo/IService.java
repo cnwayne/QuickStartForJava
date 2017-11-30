@@ -1,7 +1,7 @@
 package com.wayneleo.quickstart.services.sample.dubbo;
 
-import java.io.Serializable;
+import com.wayneleo.quickstart.framework.base.exception.BaseInterface;
 
-public interface IService extends Serializable {
+public interface IService extends BaseInterface {
     public String sayHello( String name );
 }

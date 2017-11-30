@@ -14,10 +14,9 @@
 	<modules>
 		<module>ApiDocs</module>
 		<module>Base</module>
-		<module>Common</module>
 		<module>Core</module>
-		<module>Entity</module>
 		<module>Test</module>
+		<module>Extensions</module>
 	</modules>
 
 
@@ -25,7 +24,6 @@
 		<servlet.version>3.1.0</servlet.version>
 		<spring.boot.version>1.5.4.RELEASE</spring.boot.version>
 		<spring.swagger.version>2.4.0</spring.swagger.version>
-		<dubbo.version>2.5.3</dubbo.version>
 		<zkclient.version>0.3</zkclient.version>
 		<jdbc.mysql.version>5.1.39</jdbc.mysql.version>
 		<common.lang3.version>3.3.2</common.lang3.version>
@@ -67,36 +65,6 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>${spring.swagger.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<version>${dubbo.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>com.101tec</groupId>
-			<artifactId>zkclient</artifactId>
-			<version>${zkclient.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j</artifactId>
-					<groupId>log4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>slf4j-log4j12</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

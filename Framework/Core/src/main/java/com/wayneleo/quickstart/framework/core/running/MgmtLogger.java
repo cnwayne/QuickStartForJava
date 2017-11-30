@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.wayneleo.quickstart.framework.base.exception.BaseException;
-import com.wayneleo.quickstart.framework.entity.BaseResponse;
+import com.wayneleo.quickstart.framework.base.exception.BaseResponse;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 

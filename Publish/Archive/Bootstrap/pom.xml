@@ -26,6 +26,11 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>publish-configuration</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>framework-apidocs</artifactId>
 			<version>${project.version}</version>
 		</dependency>

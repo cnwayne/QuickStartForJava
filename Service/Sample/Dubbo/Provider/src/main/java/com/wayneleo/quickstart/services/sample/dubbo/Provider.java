@@ -10,5 +10,4 @@ public class Provider implements IService {
     public String sayHello( String name ) {
         return "Hello " + name + " !";
     }
-
 }

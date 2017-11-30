@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.wayneleo.quickstart.framework.base.exception.BaseException;
+import com.wayneleo.quickstart.framework.base.exception.BaseResponse;
 import com.wayneleo.quickstart.framework.core.running.MgmtConfig;
-import com.wayneleo.quickstart.framework.entity.BaseResponse;
 
 @RestController( "MGMT_SHUTDOWN" )
 public class MgmtShutdown {

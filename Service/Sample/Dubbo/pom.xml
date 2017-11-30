@@ -15,5 +15,13 @@
 		<module>Provider</module>
 		<module>Consumer</module>
 	</modules>
+	
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>framework-extensions-dubbo</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>

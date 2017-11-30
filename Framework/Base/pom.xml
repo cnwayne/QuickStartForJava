@@ -11,11 +11,6 @@
 
 
 	<dependencies>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>framework-entity</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 
 </project>
