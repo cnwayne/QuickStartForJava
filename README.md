@@ -77,7 +77,7 @@ service-sample是一个样例程序，其中包含控制器、实体类、VO、�
 </dependency>
 ```
 
-再次执行[_先运行起来_](#GoFirst)中的代码。
+再次执行“_先运行起来_”中的代码。
 
 
 # 四、关于子工程
@@ -102,6 +102,6 @@ Service-API存放所有模块的服务接口(service层)、实体类、VO类、�
 
 2. 在 publish 的 pom.xml 文件的`<dependences></dependences>`之间加入对新创建的子工程的依赖。
 
-3. 再次执行[_先运行起来_](#GoFirst)中的代码。
+3. 再次执行“_先运行起来_”中的代码。
 
 
