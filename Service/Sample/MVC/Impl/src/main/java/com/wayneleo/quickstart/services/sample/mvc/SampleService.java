@@ -1,6 +1,6 @@
 package com.wayneleo.quickstart.services.sample.mvc;
 
-import com.wayneleo.quickstart.framework.base.exception.BaseService;
+import com.wayneleo.quickstart.framework.base.BaseService;
 import com.wayneleo.quickstart.services.sample.mvc.ISampleService;
 import com.wayneleo.quickstart.services.sample.mvc.ParamEntity;
 import com.wayneleo.quickstart.services.sample.mvc.SampleResp;

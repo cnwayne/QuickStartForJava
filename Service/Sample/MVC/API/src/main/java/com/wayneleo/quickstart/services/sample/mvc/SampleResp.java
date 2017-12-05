@@ -1,7 +1,7 @@
 package com.wayneleo.quickstart.services.sample.mvc;
 
 import java.util.Date;
-import com.wayneleo.quickstart.framework.base.exception.BaseResponse;
+import com.wayneleo.quickstart.framework.base.BaseResponse;
 
 public class SampleResp extends BaseResponse {
     private static final long serialVersionUID = 2358402166414827347L;

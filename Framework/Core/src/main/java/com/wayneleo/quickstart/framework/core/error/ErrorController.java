@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import com.wayneleo.quickstart.framework.base.exception.BaseException;
+import com.wayneleo.quickstart.framework.base.BaseException;
 
 @RequestMapping( "${server.error.path:${error.path:/error}}" )
 public class ErrorController extends AbstractErrorController {

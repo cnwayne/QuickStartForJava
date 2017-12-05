@@ -8,8 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.wayneleo.quickstart.framework.base.exception.BaseException;
-import com.wayneleo.quickstart.framework.base.exception.BaseResponse;
+import com.wayneleo.quickstart.framework.base.BaseException;
+import com.wayneleo.quickstart.framework.base.BaseResponse;
 import com.wayneleo.quickstart.framework.core.running.MgmtConfig;
 
 @RestController( "MGMT_SHUTDOWN" )
@@ -34,18 +34,19 @@ public class MgmtShutdown {
         Thread thread = new Thread( new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep( 2000 );
-                }
-                catch ( InterruptedException e ) {
-                    e.printStackTrace();
-                }
                 SpringApplication.exit( applicationContext, new ExitCodeGenerator() {
                     @Override
                     public int getExitCode() {
                         return response.getCode();
                     }
                 } );
+                try {
+                    Thread.sleep( 2000 );
+                }
+                catch ( InterruptedException e ) {
+                    e.printStackTrace();
+                }
+                System.exit( 1 );
             }
         } );
         thread.start();

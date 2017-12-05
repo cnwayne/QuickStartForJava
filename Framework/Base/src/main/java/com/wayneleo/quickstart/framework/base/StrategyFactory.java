@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.framework.base.exception;
+package com.wayneleo.quickstart.framework.base;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
