@@ -31,6 +31,9 @@ public class MgmtShutdown {
                                 secret );
             }
         }
+        /*-
+         * 先优雅的停止
+         */
         Thread thread = new Thread( new Runnable() {
             @Override
             public void run() {
@@ -40,16 +43,22 @@ public class MgmtShutdown {
                         return response.getCode();
                     }
                 } );
-                try {
-                    Thread.sleep( 2000 );
-                }
-                catch ( InterruptedException e ) {
-                    e.printStackTrace();
-                }
-                System.exit( 1 );
             }
         } );
         thread.start();
+        /*-
+         * 再给它几秒，让它优雅的停止
+         */
+        try {
+            Thread.sleep( 5000 );
+        }
+        catch ( Exception e ) {
+            e.printStackTrace();
+        }
+        /*-
+         * 还是不能优雅的停止，那就强行停止
+         */
+        System.exit( 1 );
         return response;
     }
 }
