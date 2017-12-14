@@ -2,16 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.wayneleo.quickstart</groupId>
+	<groupId>com.wayneleo</groupId>
 	<artifactId>quickstart</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 
 	<modules>
-		<module>Framework</module>
-		<module>Publish</module>
-		<module>Service</module>
+		<module>QuickStart-Framework</module>
+		<module>QuickStart-Publish</module>
+		<module>QuickStart-Service</module>
 	</modules>
 
 
