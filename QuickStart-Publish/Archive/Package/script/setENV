@@ -35,8 +35,10 @@ CORE_LIBS="/core"
 
 
 ##  应用参数
-ARGS="--server.port=${PORT}"
-ARGS="$ARGS --logging.file=${_LOG_DIR}/${APP_NAME}.log --shutdown.secret=${SECRET}"
+ARGS="      --server.home=${APP_HOME}"
+ARGS="$ARGS --server.port=${PORT}"
+ARGS="$ARGS --logging.file=${_LOG_DIR}/${APP_NAME}.log"
+ARGS="$ARGS --shutdown.secret=${SECRET}"
 ARGS="$ARGS --spring.config.location=file:${APP_HOME}/conf/application.yml"
 
 
