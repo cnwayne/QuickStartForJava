@@ -2,6 +2,35 @@
 ##  系统管理功能秘钥
 SECRET="4jg75AbeA3Saz3RzAtta"
 
+##  关系型数据库驱动
+DB_DRIVER="com.mysql.jdbc.Driver"
+
+##  关系型数据库数据库地址
+DB_URL="jdbc:mysql://localhost:3306/olmp?roundRobinLoadBalance=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false"
+
+##  关系型数据库用户名
+DB_USERNAME="root"
+
+##  关系型数据库密码
+DB_PASSWORD="123456"
+
+##  关系型数据库最大连接数
+DB_MAX_ACTIVE="10"
+
+##  关系型数据库最大空闲连接数
+DB_MAX_IDLE="8"
+
+##  关系型数据库最小空闲连接数
+DB_MIN_IDLE="8"
+
+##  是否在日志中显示SQL语句
+DB_SHOW_SQL="true"
+
+##  关系型数据库自动DDL操作
+DB_DDL_AUTO="none"
+
+##  关系型数据库方言
+DB_DIALECT="org.hibernate.dialect.MySQL5InnoDBDialect"
 
 ##  监听端口
 PORT="8080"
@@ -23,7 +52,7 @@ APP_NAME="QuickStart"
 
 
 ##  程序入口
-ENTRY="com.wayneleo.quickstart.startup.Bootstrap"
+ENTRY="com.bridgeintelligent.olmp.startup.Bootstrap"
 
 
 ##  依赖Jar
@@ -35,11 +64,21 @@ CORE_LIBS="/core"
 
 
 ##  应用参数
-ARGS="      --server.home=${APP_HOME}"
 ARGS="$ARGS --server.port=${PORT}"
 ARGS="$ARGS --logging.file=${_LOG_DIR}/${APP_NAME}.log"
-ARGS="$ARGS --shutdown.secret=${SECRET}"
+ARGS="$ARGS --mgmt.serverHome=${APP_HOME}"
+ARGS="$ARGS --mgmt.secret=${SECRET}"
 ARGS="$ARGS --spring.config.location=file:${APP_HOME}/conf/application.yml"
+ARGS="$ARGS --spring.datasource.driver-class-name=${DB_DRIVER}"
+ARGS="$ARGS --spring.datasource.url=${DB_URL}"
+ARGS="$ARGS --spring.datasource.username=${DB_USERNAME}"
+ARGS="$ARGS --spring.datasource.password=${DB_PASSWORD}"
+ARGS="$ARGS --spring.datasource.max-active=${DB_MAX_ACTIVE}"
+ARGS="$ARGS --spring.datasource.max-idle=${DB_MAX_IDLE}"
+ARGS="$ARGS --spring.datasource.min-idle=${DB_MIN_IDLE}"
+ARGS="$ARGS --spring.jpa.show-sql=${DB_SHOW_SQL}"
+ARGS="$ARGS --spring.jpa.hibernate.ddl-auto=${DB_DDL_AUTO}"
+ARGS="$ARGS --spring.jpa.properties.hibernate.dialect=${DB_DIALECT}"
 
 
 #------------------------------------------------------
@@ -54,4 +93,5 @@ export ARGS
 export ENTRY
 
 bash $APP_HOME/bin/${SCRIPT}
+
 
