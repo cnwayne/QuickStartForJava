@@ -19,8 +19,8 @@
 	</dependencies>
 	
 	<modules>
-		<module>API</module>
-		<module>Sample</module>
+		<module>quickstart-service-api</module>
+		<module>quickstart-service-sample</module>
 	</modules>
 
 </project>

@@ -9,9 +9,9 @@
 
 
 	<modules>
-		<module>QuickStart-Framework</module>
-		<module>QuickStart-Publish</module>
-		<module>QuickStart-Service</module>
+		<module>quickstart-framework</module>
+		<module>quickstart-publish</module>
+		<module>quickstart-service</module>
 	</modules>
 
 

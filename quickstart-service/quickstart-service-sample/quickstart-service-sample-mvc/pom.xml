@@ -7,21 +7,12 @@
 		<artifactId>quickstart-service-sample</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>quickstart-service-sample-dubbo</artifactId>
+	<artifactId>quickstart-service-sample-mvc</artifactId>
 	<packaging>pom</packaging>
-
-	<modules>
-		<module>API</module>
-		<module>Provider</module>
-		<module>Consumer</module>
-	</modules>
 	
-	<dependencies>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>quickstart-framework-extensions-dubbo</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
+	<modules>
+		<module>quickstart-service-sample-mvc-api</module>
+		<module>quickstart-service-sample-mvc-impl</module>
+	</modules>
 
 </project>

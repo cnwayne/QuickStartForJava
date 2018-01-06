@@ -11,8 +11,8 @@
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>Dubbo</module>
-		<module>MVC</module>
+		<module>quickstart-service-sample-dubbo</module>
+		<module>quickstart-service-sample-mvc</module>
 	</modules>
 
 </project>

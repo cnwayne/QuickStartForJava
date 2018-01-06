@@ -1,0 +1,2 @@
+mv -vf Dubbo  quickstart-service-sample-dubbo
+mv -vf MVC    quickstart-service-sample-mvc

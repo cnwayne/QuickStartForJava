@@ -1,0 +1,8 @@
+
+curl -s -o /dev/null -X POST "http://localhost:$PORT/server/logger?secret=$SECRET&flag=$LOG_LEVEL&name=$LOG_NAME"
+
+if [ $? -ne 0 ];then
+    echo "Failed to change the server logger level"
+else
+    echo "Succeed to change the server logger level"
+fi

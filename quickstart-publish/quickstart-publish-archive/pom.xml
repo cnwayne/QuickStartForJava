@@ -11,8 +11,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>Bootstrap</module>
-		<module>Package</module>
+		<module>quickstart-publish-archive-bootstrap</module>
+		<module>quickstart-publish-archive-package</module>
 	</modules>
 
 </project>

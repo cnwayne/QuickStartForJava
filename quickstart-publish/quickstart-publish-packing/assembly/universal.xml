@@ -45,7 +45,7 @@
 		<!-- 结束 启动脚本 -->
 		<!-- 开始 配置文件 -->
 		<file>
-			<source>${project.parent.parent.parent.basedir}/Framework/Core/src/main/resources/application.yml</source>
+			<source>${project.parent.parent.parent.basedir}/quickstart-publish/quickstart-publish-configuration/src/main/resources/application.yml</source>
 			<outputDirectory>/conf</outputDirectory>
 		</file>
 		<!-- 结束 配置文件 -->

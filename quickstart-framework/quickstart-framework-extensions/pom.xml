@@ -12,8 +12,8 @@
 	
 	
 	<modules>
-		<module>Dubbo</module>
-		<module>Husky</module>
+		<module>quickstart-framework-extensions-dubbo</module>
+		<module>quickstart-framework-extensions-husky</module>
 	</modules>
 
 
