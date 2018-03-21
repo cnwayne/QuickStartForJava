@@ -8,3 +8,4 @@ extension:
         module.name: QuickStart
         consumer.timeout: 1000
         consumer.retries: 5
+        consumer.check: false
