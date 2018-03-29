@@ -12,9 +12,10 @@
 
     <modules>
         <module>quickstart-publish-configuration</module>
-        <module>quickstart-publish-archive</module>
         <module>quickstart-publish-container</module>
-        <module>quickstart-publish-packing</module>
+        <module>quickstart-publish-dependencies</module>
+        <module>quickstart-publish-embed</module>
+        <module>quickstart-publish-test</module>
     </modules>
 
 </project>

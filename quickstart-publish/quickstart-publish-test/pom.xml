@@ -4,16 +4,10 @@
 
     <parent>
         <groupId>com.wayneleo</groupId>
-        <artifactId>quickstart-framework</artifactId>
+        <artifactId>quickstart-publish</artifactId>
         <version>0.2.0-SNAPSHOT</version>
     </parent>
-    <artifactId>quickstart-framework-extensions</artifactId>
-    <packaging>pom</packaging>
-
-
-    <modules>
-        <module>quickstart-framework-extensions-dubbo</module>
-    </modules>
+    <artifactId>quickstart-publish-test</artifactId>
 
 
     <dependencies>
@@ -21,6 +15,16 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>quickstart-framework-core</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>quickstart-publish-configuration</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
 

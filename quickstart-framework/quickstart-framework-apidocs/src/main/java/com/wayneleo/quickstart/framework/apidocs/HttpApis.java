@@ -23,10 +23,10 @@ public class HttpApis {
     }
 
     private static ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title( "客户画像系统接口说明" )
-                .description( "本文档只说明HTTP接口" )
+        return new ApiInfoBuilder().title( "在线接口文档" )
+                .description( "本文档只针对系统中的HTTP接口" )
                 .termsOfServiceUrl( "" )
-                .version( "1.0.20170710" )
+                .version( "20180329" )
                 .build();
     }
 }

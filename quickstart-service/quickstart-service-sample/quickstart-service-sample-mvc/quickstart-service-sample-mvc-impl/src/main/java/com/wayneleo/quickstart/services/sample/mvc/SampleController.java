@@ -24,7 +24,7 @@ public class SampleController extends BaseController {
         resp.setCode( 0 );
         return resp;
     }
-    
+
     @ApiOperation( value = "测试Del", notes = "返回正常结果" )
     @RequestMapping( method = RequestMethod.DELETE )
     public BaseResponse testDel() {
