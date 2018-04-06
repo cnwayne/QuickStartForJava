@@ -3,7 +3,7 @@
 <configuration>
 
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
-	<root level="WARN" />
+	<root level="ERROR" />
 
 	<logger name="com.wayneleo" level="DEBUG" />
 

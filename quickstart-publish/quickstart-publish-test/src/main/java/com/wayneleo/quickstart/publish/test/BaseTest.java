@@ -6,4 +6,4 @@ import com.wayneleo.quickstart.framework.core.conf.Application;
 
 @RunWith( SpringInstanceTestClassRunner.class )
 @SpringBootTest( classes = Application.class )
-public abstract class TestRoot implements InstanceTestClassListener {}
+public abstract class BaseTest implements InstanceTestClassListener {}
