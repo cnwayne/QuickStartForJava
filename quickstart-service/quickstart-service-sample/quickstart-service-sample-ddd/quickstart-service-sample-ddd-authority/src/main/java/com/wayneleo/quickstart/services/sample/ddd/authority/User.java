@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.services.sample.ddd;
+package com.wayneleo.quickstart.services.sample.ddd.authority;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag;
 
 /**
  * 用户模型
@@ -28,6 +30,7 @@ public class User implements Serializable {
     private int             age;
     private List<UserGroup> groups;
     private List<UserRole>  roles;
+    private List<Tag>       tags;
 
     @Id
     @Column( name = "user_id", nullable = false, length = 32 )
@@ -90,6 +93,15 @@ public class User implements Serializable {
 
     public void setRoles( List<UserRole> roles ) {
         this.roles = roles;
+    }
+
+    @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "creater" )
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags( List<Tag> tags ) {
+        this.tags = tags;
     }
 
     public User addGroup( UserGroup group ) {

@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.services.sample.ddd;
+package com.wayneleo.quickstart.services.sample.ddd.authority;
 
 import java.io.Serializable;
 import java.util.List;

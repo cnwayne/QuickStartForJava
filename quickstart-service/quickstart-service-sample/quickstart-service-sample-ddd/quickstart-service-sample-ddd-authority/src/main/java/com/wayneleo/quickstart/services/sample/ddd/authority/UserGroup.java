@@ -1,4 +1,4 @@
-package com.wayneleo.quickstart.services.sample.ddd;
+package com.wayneleo.quickstart.services.sample.ddd.authority;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag;
 
 /**
  * 用户组模型
@@ -25,6 +26,7 @@ public class UserGroup implements Serializable {
     private String     id;    // 主键
     private String     name;  // 用户组名称
     private List<User> users; // 用户组包含的所有用户
+    private List<Tag>  tags;  // 用户组所属的标签
 
     @Id
     @Column( name = "group_id", nullable = false, length = 32 )
@@ -56,6 +58,19 @@ public class UserGroup implements Serializable {
 
     public void setUsers( List<User> users ) {
         this.users = users;
+    }
+
+    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = Tag.class, fetch = FetchType.LAZY )
+    @JoinTable(
+        name = "test_group_and_tag",
+        joinColumns = @JoinColumn( name = "group_id" ),
+        inverseJoinColumns = @JoinColumn( name = "tag_id" ) )
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags( List<Tag> tags ) {
+        this.tags = tags;
     }
 
     public UserGroup addUser( User user ) {

@@ -5,14 +5,19 @@ import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.wayneleo.quickstart.publish.test.BaseTest;
-import com.wayneleo.quickstart.services.sample.ddd.User;
-import com.wayneleo.quickstart.services.sample.ddd.UserAuthority;
-import com.wayneleo.quickstart.services.sample.ddd.UserAuthorityDao;
-import com.wayneleo.quickstart.services.sample.ddd.UserDao;
-import com.wayneleo.quickstart.services.sample.ddd.UserGroup;
-import com.wayneleo.quickstart.services.sample.ddd.UserGroupDao;
-import com.wayneleo.quickstart.services.sample.ddd.UserRole;
-import com.wayneleo.quickstart.services.sample.ddd.UserRoleDao;
+import com.wayneleo.quickstart.services.sample.ddd.authority.User;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserAuthority;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserAuthorityDao;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserDao;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserGroup;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserGroupDao;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserRole;
+import com.wayneleo.quickstart.services.sample.ddd.authority.UserRoleDao;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag.TagApprovalStatus;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag.TagGlobal;
+import com.wayneleo.quickstart.services.sample.ddd.tag.Tag.TagStatus;
+import com.wayneleo.quickstart.services.sample.ddd.tag.TagDao;
 
 public class 多对多测试 extends BaseTest {
     @Autowired
@@ -23,6 +28,8 @@ public class 多对多测试 extends BaseTest {
     private UserRoleDao      roleDao;
     @Autowired
     private UserAuthorityDao authorityDao;
+    @Autowired
+    private TagDao           tagDao;
 
     @Override
     public void beforeTest() {
@@ -44,6 +51,23 @@ public class 多对多测试 extends BaseTest {
             user.setName( "user_" + i );
             users.add( userDao.save( user ) );
         }
+        Tag tag = null;
+        List<Tag> tags = new ArrayList<>();
+        for ( int i = 0; i < 10; i++ ) {
+            tag = new Tag();
+            tag.setId( "tag_id_" + i );
+            tag.setName( "tag_name_" + i );
+            tag.setGlobal( TagGlobal.YES );
+            tag.setStatus( TagStatus.ENABLE );
+            tag.setCreater( users.get( 0 ) );
+            tag.setCreateDatetime( "2018-04-12 17:37" );
+            tag.setLastModifier( users.get( 1 ) );
+            tag.setLastModifyDatetime( "2018-04-12 17:37" );
+            tag.setApprovalStatus( TagApprovalStatus.APPROVE );
+            tag.setApprover( users.get( 2 ) );
+            tag.setApprovalDatetime( "2018-04-12 17:37" );
+            tags.add( tagDao.save( tag ) );
+        }
         UserGroup group = null;
         List<UserGroup> groups = new ArrayList<>();
         for ( int i = 0; i < 2; i++ ) {
@@ -51,6 +75,7 @@ public class 多对多测试 extends BaseTest {
             group.setId( "group_id_" + i );
             group.setName( "group_" + i );
             group.setUsers( users );
+            group.setTags( tags );
             groups.add( groupDao.save( group ) );
         }
         UserAuthority authority = null;
@@ -78,8 +103,10 @@ public class 多对多测试 extends BaseTest {
     @Transactional
     public void 查_通过用户模型查询出相应的其它模型() {
         User user = userDao.getOne( "user_id_0" );
-        System.out.println( "组   " + user.getGroups() );
-        System.out.println( "角色 " + user.getRoles() );
-        System.out.println( "权限 " + user.allAuthorities() );
+        System.out.println( "组     " + user.getGroups() );
+        System.out.println( "角色   " + user.getRoles() );
+        System.out.println( "权限   " + user.allAuthorities() );
+        System.out.println( "用户组 " + user.getGroups() );
+        System.out.println( "标签   " + user.getTags() );
     }
 }
