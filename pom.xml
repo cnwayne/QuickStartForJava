@@ -11,7 +11,7 @@
     <modules>
         <module>quickstart-framework</module>
         <module>quickstart-publish</module>
-        <module>quickstart-service</module>
+        <module>quickstart-transactional</module>
     </modules>
 
 
