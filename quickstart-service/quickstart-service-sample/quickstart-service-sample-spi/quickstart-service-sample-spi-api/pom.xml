@@ -4,15 +4,9 @@
 
     <parent>
         <groupId>com.wayneleo</groupId>
-        <artifactId>quickstart-service-sample</artifactId>
+        <artifactId>quickstart-service-sample-spi</artifactId>
         <version>0.2.0-SNAPSHOT</version>
     </parent>
-    <artifactId>quickstart-service-sample-ddd</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>quickstart-service-sample-ddd-authority</module>
-        <module>quickstart-service-sample-ddd-eventbus</module>
-    </modules>
+    <artifactId>quickstart-service-sample-spi-api</artifactId>
 
 </project>

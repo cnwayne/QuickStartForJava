@@ -4,15 +4,15 @@
 
     <parent>
         <groupId>com.wayneleo</groupId>
-        <artifactId>quickstart-service-sample-ddd</artifactId>
+        <artifactId>quickstart-service-sample-spi</artifactId>
         <version>0.2.0-SNAPSHOT</version>
     </parent>
-    <artifactId>quickstart-service-sample-ddd-authority</artifactId>
+    <artifactId>quickstart-service-sample-spi-provider_a</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>quickstart-publish-test</artifactId>
+            <artifactId>quickstart-service-sample-spi-api</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

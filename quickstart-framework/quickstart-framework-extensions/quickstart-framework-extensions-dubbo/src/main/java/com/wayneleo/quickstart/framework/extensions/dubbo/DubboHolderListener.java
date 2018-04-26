@@ -16,8 +16,7 @@ public class DubboHolderListener implements ApplicationListener {
     @Override
     public void onApplicationEvent( ApplicationEvent event ) {
         if ( event instanceof ApplicationPreparedEvent ) {
-            if ( running == Boolean.FALSE )
-                running = Boolean.TRUE;
+            if ( running == Boolean.FALSE ) running = Boolean.TRUE;
             if ( holdThread == null ) {
                 holdThread = new Thread( new Runnable() {
                     @Override

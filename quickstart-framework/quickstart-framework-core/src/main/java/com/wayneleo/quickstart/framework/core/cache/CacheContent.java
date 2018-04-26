@@ -14,12 +14,6 @@ public class CacheContent {
 
     @Override
     public String toString() {
-        return "CacheContent {\"namespace\":\"" +
-                namespace +
-                "\", \"key\":\"" +
-                key +
-                "\", \"value\":\"" +
-                value +
-                "\"}";
+        return "CacheContent {\"namespace\":\"" + namespace + "\", \"key\":\"" + key + "\", \"value\":\"" + value + "\"}";
     }
 }

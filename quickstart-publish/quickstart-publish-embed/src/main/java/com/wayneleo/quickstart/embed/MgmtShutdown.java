@@ -25,10 +25,7 @@ public class MgmtShutdown {
         response.setCode( 0 );
         if ( StringUtils.isNotEmpty( mgmtConfig.getSecret() ) ) {
             if ( !mgmtConfig.getSecret().equals( secret ) ) {
-                throw new BaseException(
-                        999,
-                        "Someone wants to shutdown this server, but he doesn't know the secret. This time he tried the secret is :" +
-                                secret );
+                throw new BaseException( 999, "Someone wants to shutdown this server, but he doesn't know the secret. This time he tried the secret is :" + secret );
             }
         }
         /*-

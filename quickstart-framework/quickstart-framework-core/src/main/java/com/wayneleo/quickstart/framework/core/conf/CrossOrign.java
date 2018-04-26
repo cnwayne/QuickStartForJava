@@ -18,10 +18,6 @@ public class CrossOrign extends WebMvcConfigurerAdapter {
     @Override
     public void addCorsMappings( CorsRegistry registry ) {
         url = StringUtils.isEmpty( url ) ? "*" : url;
-        registry.addMapping( "/**" )
-                .allowedOrigins( url )
-                .allowedMethods( "GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS" )
-                .allowCredentials( true )
-                .maxAge( 3600 );
+        registry.addMapping( "/**" ).allowedOrigins( url ).allowedMethods( "GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS" ).allowCredentials( true ).maxAge( 3600 );
     }
 }

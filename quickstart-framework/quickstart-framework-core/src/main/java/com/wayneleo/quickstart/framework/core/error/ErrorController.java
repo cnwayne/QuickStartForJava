@@ -42,10 +42,7 @@ public class ErrorController extends AbstractErrorController {
      * @param errorProperties configuration properties
      * @param errorViewResolvers error view resolvers
      */
-    public ErrorController(
-            ErrorAttributes errorAttributes,
-            ErrorProperties errorProperties,
-            List<ErrorViewResolver> errorViewResolvers ) {
+    public ErrorController( ErrorAttributes errorAttributes, ErrorProperties errorProperties, List<ErrorViewResolver> errorViewResolvers ) {
         super( errorAttributes, errorViewResolvers );
         Assert.notNull( errorProperties, "ErrorProperties must not be null" );
         this.errorProperties = errorProperties;

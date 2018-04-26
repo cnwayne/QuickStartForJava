@@ -4,16 +4,17 @@
 
 	<parent>
 		<groupId>com.wayneleo</groupId>
-		<artifactId>quickstart-service-sample</artifactId>
+		<artifactId>quickstart-service-sample-mvc</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>quickstart-service-sample-mvc</artifactId>
-	<packaging>pom</packaging>
-	
-	<modules>
-		<module>quickstart-service-sample-mvc-api</module>
-		<module>quickstart-service-sample-mvc-impl</module>
-        <module>quickstart-service-sample-mvc-dynamicsql</module>
-	</modules>
+	<artifactId>quickstart-service-sample-mvc-dynamicsql</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>quickstart-service-sample-mvc-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>

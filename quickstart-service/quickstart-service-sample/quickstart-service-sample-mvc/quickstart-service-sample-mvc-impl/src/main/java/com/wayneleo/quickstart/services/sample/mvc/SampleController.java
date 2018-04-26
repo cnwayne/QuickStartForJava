@@ -35,9 +35,7 @@ public class SampleController extends BaseController {
     }
 
     @ApiOperation( value = "接口01", notes = "返回正常结果" )
-    @ApiImplicitParams( {
-            @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ),
-    } )
+    @ApiImplicitParams( { @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ), } )
     @RequestMapping( method = RequestMethod.POST )
     public SampleResp post( @RequestParam( name = "name" ) String name ) {
         SampleResp resp = new SampleResp();
@@ -47,9 +45,7 @@ public class SampleController extends BaseController {
     }
 
     @ApiOperation( value = "接口02", notes = "返回正常结果" )
-    @ApiImplicitParams( {
-            @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ),
-    } )
+    @ApiImplicitParams( { @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ), } )
     @RequestMapping( method = RequestMethod.GET )
     public SampleResp get( @RequestParam( name = "name" ) String name ) {
         SampleResp resp = new SampleResp();

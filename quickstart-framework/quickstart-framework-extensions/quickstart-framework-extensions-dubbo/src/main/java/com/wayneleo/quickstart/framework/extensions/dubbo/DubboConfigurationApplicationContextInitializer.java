@@ -6,8 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 
-public class DubboConfigurationApplicationContextInitializer implements
-        ApplicationContextInitializer<ConfigurableApplicationContext> {
+public class DubboConfigurationApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     @Override
     public void initialize( ConfigurableApplicationContext applicationContext ) {
         Environment env = applicationContext.getEnvironment();
