@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import com.wayneleo.quickstart.framework.core.integrate.ExtApplication;
 
 @EnableAutoConfiguration
 @EnableScheduling
@@ -15,6 +16,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaRepositories( Application.FRAMEWORK_BASE_PACKAGE )
 @ComponentScan( Application.FRAMEWORK_BASE_PACKAGE )
 public class Application {
+    /**
+     * Do not modify here !!<br>
+     * Please read {@link ExtApplication} .
+     */
     public static final String FRAMEWORK_BASE_PACKAGE = "com.wayneleo.quickstart";
 
     @Bean
