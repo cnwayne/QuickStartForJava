@@ -19,7 +19,7 @@
 	</dependencies>
 	
 	<modules>
-		<module>quickstart-transactional-api</module>
+		<module>quickstart-transactional-common</module>
 		<module>quickstart-transactional-sample</module>
 	</modules>
 

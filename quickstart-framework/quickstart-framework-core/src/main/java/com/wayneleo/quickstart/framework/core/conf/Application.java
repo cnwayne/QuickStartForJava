@@ -11,10 +11,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableAutoConfiguration
 @EnableScheduling
-@EntityScan( "com.wayneleo.quickstart" )
-@EnableJpaRepositories( "com.wayneleo.quickstart" )
-@ComponentScan( basePackages = "com.wayneleo.quickstart" )
+@EntityScan( Application.FRAMEWORK_BASE_PACKAGE )
+@EnableJpaRepositories( Application.FRAMEWORK_BASE_PACKAGE )
+@ComponentScan( Application.FRAMEWORK_BASE_PACKAGE )
 public class Application {
+    public static final String FRAMEWORK_BASE_PACKAGE = "com.wayneleo.quickstart";
+
     @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
