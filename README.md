@@ -28,15 +28,15 @@ cd ./QuickStart
 mvn clean install
 
 # 进入发布模块
-cd ./Publish/Archive/Package
+cd ./quickstart-publish/quickstart-publish-embed
 
 # 打包
-mvn clean assembly:single
+mvn clean package
 
 # 解压并运行
 cd ./target
-unzip ./quickstart-0.2.0-SNAPSHOT-product.zip
-cd ./quickstart-0.2.0-SNAPSHOT-product
+unzip ./quickstart-bootstrap-0.2.0-SNAPSHOT-embed.zip
+cd ./quickstart-bootstrap-0.2.0-SNAPSHOT
 ./bin/startup.sh
 
 # 监视运行日志
@@ -51,7 +51,7 @@ Ctrl-C
 
 ```shell
 # 第一个参数是级别，从低到高分别是：DEBUG | INFO | WARN | ERROR | OFF
-# 第二个参数是包名，不指定的话默认为 root
+# 第二个参数是包名，不指定的话默认为根记录器( root )
 ./bin/logger.sh  DEBUG  root
 ```
 
