@@ -14,6 +14,6 @@ import com.wayneleo.quickstart.framework.core.conf.Application;
 @EnableJpaRepositories( ExtApplication.BASE_PACKAGE )
 @ComponentScan( ExtApplication.BASE_PACKAGE )
 public class ExtApplication {
-    /** TODO 在这里修改需要Spring扫描的包名 ( modify the name of the package here ) */
+    /** TODO 在这里修改需要Spring扫描的包名 ( here to modify the name of the package that spring needs scan ) */
     public static final String BASE_PACKAGE = "com.bridgeintelligent.test";
 }
