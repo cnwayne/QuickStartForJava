@@ -16,7 +16,6 @@
         <module>framework-base</module>
         <module>framework-core</module>
         <module>framework-extensions</module>
-        <module>framework-test</module>
     </modules>
 
 </project>
