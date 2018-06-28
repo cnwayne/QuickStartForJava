@@ -22,11 +22,11 @@ public class MgmtLogger {
         response.setCode( 0 );
         if ( StringUtils.isNotEmpty( mgmtConfig.getSecret() ) ) {
             if ( !mgmtConfig.getSecret().equals( secret ) ) {
-                throw new BaseException( 999, "Someone wants to change the logger level, but he doesn't know the secret. This time he tried the secret is :" + secret );
+                throw new BaseException( 999, "Someone wants to change the logger level, but he didn't know the secret key. The secret key he's currently trying is :" + secret );
             }
         }
         if ( StringUtils.isEmpty( flag ) ) {
-            throw new BaseException( 999, "The level flag cannot be empty" );
+            throw new BaseException( 999, "The level flag can not be empty" );
         }
         if ( StringUtils.isEmpty( name ) ) {
             name = "root";
