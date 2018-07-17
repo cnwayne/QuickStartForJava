@@ -11,7 +11,8 @@
     <modules>
         <module>framework</module>
         <module>publish</module>
-        <module>transactional</module>
+        <module>transactional-sample</module>
+        <module>test</module>
     </modules>
 
 
