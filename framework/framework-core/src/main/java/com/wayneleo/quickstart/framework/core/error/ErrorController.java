@@ -1,45 +1,41 @@
 package com.wayneleo.quickstart.framework.core.error;
 
-import java.util.Collections;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+import com.wayneleo.quickstart.framework.base.BaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.web.AbstractErrorController;
-import org.springframework.boot.autoconfigure.web.BasicErrorController;
-import org.springframework.boot.autoconfigure.web.DefaultErrorAttributes;
-import org.springframework.boot.autoconfigure.web.ErrorAttributes;
-import org.springframework.boot.autoconfigure.web.ErrorProperties;
+import org.springframework.boot.autoconfigure.web.*;
 import org.springframework.boot.autoconfigure.web.ErrorProperties.IncludeStacktrace;
-import org.springframework.boot.autoconfigure.web.ErrorViewResolver;
 import org.springframework.http.MediaType;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import com.wayneleo.quickstart.framework.base.BaseException;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Collections;
+import java.util.List;
 
 @RequestMapping( "${server.error.path:${error.path:/error}}" )
 public class ErrorController extends AbstractErrorController {
-    private static final Logger   LOG = LoggerFactory.getLogger( ErrorController.class );
+    private static final Logger LOG = LoggerFactory.getLogger( ErrorController.class );
     private final ErrorProperties errorProperties;
 
     /**
      * Create a new {@link BasicErrorController} instance.
-     * 
+     *
      * @param errorAttributes the error attributes
      * @param errorProperties configuration properties
      */
     public ErrorController( ErrorAttributes errorAttributes, ErrorProperties errorProperties ) {
-        this( errorAttributes, errorProperties, Collections.<ErrorViewResolver> emptyList() );
+        this( errorAttributes, errorProperties, Collections.<ErrorViewResolver>emptyList() );
     }
 
     /**
      * Create a new {@link BasicErrorController} instance.
-     * 
-     * @param errorAttributes the error attributes
-     * @param errorProperties configuration properties
+     *
+     * @param errorAttributes    the error attributes
+     * @param errorProperties    configuration properties
      * @param errorViewResolvers error view resolvers
      */
     public ErrorController( ErrorAttributes errorAttributes, ErrorProperties errorProperties, List<ErrorViewResolver> errorViewResolvers ) {
@@ -89,8 +85,8 @@ public class ErrorController extends AbstractErrorController {
 
     /**
      * Determine if the stacktrace attribute should be included.
-     * 
-     * @param request the source request
+     *
+     * @param request  the source request
      * @param produces the media type produced (or {@code MediaType.ALL})
      * @return if the stacktrace attribute should be included
      */
@@ -107,7 +103,7 @@ public class ErrorController extends AbstractErrorController {
 
     /**
      * Provide access to the error properties.
-     * 
+     *
      * @return the error properties
      */
     protected ErrorProperties getErrorProperties() {

@@ -3,10 +3,10 @@ package com.wayneleo.test;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AAA {
-    public static final int WAN_UNIT         = 10000;
+    public static final int WAN_UNIT = 10000;
     public static final int MAX_RUNNING_TIME = 30000;
-    public static final int LOOPING_TIMES    = 1000 * WAN_UNIT;
-    public static final int THREAD_NUM       = 1;
+    public static final int LOOPING_TIMES = 1000 * WAN_UNIT;
+    public static final int THREAD_NUM = 1;
 
     public static void main( String[] args ) throws Exception {
         Counter counter = new Counter();
@@ -32,6 +32,10 @@ public class AAA {
             SampleThread.counter = counter;
         }
 
+        public static Integer getVal() {
+            return counter.getVal();
+        }
+
         @Override
         public void run() {
             try {
@@ -44,15 +48,11 @@ public class AAA {
                 e.printStackTrace();
             }
         }
-
-        public static Integer getVal() {
-            return counter.getVal();
-        }
     }
 
     public static class Counter {
         private SimpleLock lock = new SimpleLock();
-        private Integer    val  = 0;
+        private Integer val = 0;
 
         public final void increment() {
             try {
@@ -75,8 +75,8 @@ public class AAA {
 
     public static class SimpleLock {
         private static final Integer UNLOCK_SYNC_VAL = 0;
-        private static final Integer LOCK_SYNC_VAL   = 1;
-        private static AtomicInteger syncAtomic      = new AtomicInteger( UNLOCK_SYNC_VAL );
+        private static final Integer LOCK_SYNC_VAL = 1;
+        private static AtomicInteger syncAtomic = new AtomicInteger( UNLOCK_SYNC_VAL );
 
         public void lock() {
             try {

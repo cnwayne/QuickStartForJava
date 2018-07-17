@@ -14,12 +14,12 @@ public class Test01 {
     public static class A {
         EventBus bus;
 
-        public void foo() {
-            bus.post( "foo" );
-        }
-
         public A( EventBus bus ) {
             this.bus = bus;
+        }
+
+        public void foo() {
+            bus.post( "foo" );
         }
     }
 

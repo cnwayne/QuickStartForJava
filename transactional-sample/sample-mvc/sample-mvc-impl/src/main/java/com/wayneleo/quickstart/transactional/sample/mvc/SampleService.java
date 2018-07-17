@@ -1,9 +1,6 @@
 package com.wayneleo.quickstart.transactional.sample.mvc;
 
 import com.wayneleo.quickstart.framework.base.BaseService;
-import com.wayneleo.quickstart.transactional.sample.mvc.ISampleService;
-import com.wayneleo.quickstart.transactional.sample.mvc.ParamEntity;
-import com.wayneleo.quickstart.transactional.sample.mvc.SampleResp;
 
 public class SampleService extends BaseService implements ISampleService { // ISampleService是个接口，应该写在service-api里面
     private static final long serialVersionUID = 6046909713505643651L;

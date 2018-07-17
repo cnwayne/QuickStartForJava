@@ -1,7 +1,7 @@
 package com.wayneleo.quickstart.embed;
 
-import org.springframework.boot.SpringApplication;
 import com.wayneleo.quickstart.framework.core.conf.Application;
+import org.springframework.boot.SpringApplication;
 
 public class Bootstrap {
     public static void main( String[] args ) throws Exception {

@@ -2,9 +2,9 @@
 
 <configuration>
 
-	<include resource="org/springframework/boot/logging/logback/base.xml" />
-	<root level="ERROR" />
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <root level="ERROR"/>
 
-	<logger name="com.wayneleo" level="DEBUG" />
+    <logger name="com.wayneleo" level="DEBUG"/>
 
 </configuration>

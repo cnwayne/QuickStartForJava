@@ -1,32 +1,25 @@
 package com.wayneleo.quickstart.transactional.sample.ddd.authority;
 
+import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag;
 
 /**
  * 用户组模型
- * 
+ *
  * @author wayne
  */
 @Entity
 @Table( name = "test_group" )
 @SuppressWarnings( "serial" )
 public class UserGroup implements Serializable {
-    private String     id;    // 主键
-    private String     name;  // 用户组名称
+    private String id;    // 主键
+    private String name;  // 用户组名称
     private List<User> users; // 用户组包含的所有用户
-    private List<Tag>  tags;  // 用户组所属的标签
+    private List<Tag> tags;  // 用户组所属的标签
 
     @Id
     @Column( name = "group_id", nullable = false, length = 32 )
@@ -48,10 +41,7 @@ public class UserGroup implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = User.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_group_and_user",
-        joinColumns = @JoinColumn( name = "group_id" ),
-        inverseJoinColumns = @JoinColumn( name = "user_id" ) )
+    @JoinTable( name = "test_group_and_user", joinColumns = @JoinColumn( name = "group_id" ), inverseJoinColumns = @JoinColumn( name = "user_id" ) )
     public List<User> getUsers() {
         return users;
     }
@@ -61,10 +51,7 @@ public class UserGroup implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = Tag.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_group_and_tag",
-        joinColumns = @JoinColumn( name = "group_id" ),
-        inverseJoinColumns = @JoinColumn( name = "tag_id" ) )
+    @JoinTable( name = "test_group_and_tag", joinColumns = @JoinColumn( name = "group_id" ), inverseJoinColumns = @JoinColumn( name = "tag_id" ) )
     public List<Tag> getTags() {
         return tags;
     }

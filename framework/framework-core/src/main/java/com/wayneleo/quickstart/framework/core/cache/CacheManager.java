@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 public class CacheManager {
-    private static final Map<String, Map<String, Object>> REPOSITORIES_0          = new HashMap<>();
-    private static final Map<String, Map<String, Object>> REPOSITORIES_1          = new HashMap<>();
-    private static int                                    currentRepositoriesFlag = 0;
-    private static ThreadLocal<Integer>                   localRepositoriesFlag   = new ThreadLocal<>();
+    private static final Map<String, Map<String, Object>> REPOSITORIES_0 = new HashMap<>();
+    private static final Map<String, Map<String, Object>> REPOSITORIES_1 = new HashMap<>();
+    private static int currentRepositoriesFlag = 0;
+    private static ThreadLocal<Integer> localRepositoriesFlag = new ThreadLocal<>();
 
     public static void refresh( List<CacheInitializer> initializers ) {
         List<CacheContent> cacheContents = null;

@@ -1,9 +1,10 @@
 package com.wayneleo.quickstart.transactional.sample.spi.consumer;
 
+import com.wayneleo.quickstart.transactional.sample.spi.api.Something;
+
 import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.ServiceLoader;
-import com.wayneleo.quickstart.transactional.sample.spi.api.Something;
 
 public class Consumer {
     public static final int LOOPING_TIMES = 10000;
@@ -26,7 +27,8 @@ public class Consumer {
     public static Something newThing() {
         ServiceLoader<Something> things = ServiceLoader.load( Something.class );
         Iterator<Something> iterator = things.iterator();
-        if ( iterator.hasNext() ) return iterator.next();
+        if ( iterator.hasNext() )
+            return iterator.next();
         return null;
     }
 }

@@ -1,7 +1,6 @@
 package com.wayneleo.quickstart.transactional.sample.dubbo;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.wayneleo.quickstart.transactional.sample.dubbo.IService;
 
 @Service( version = "1.0.0" )
 public class Provider implements IService {

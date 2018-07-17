@@ -1,26 +1,19 @@
 package com.wayneleo.quickstart.framework.extensions.dubbo;
 
+import com.alibaba.dubbo.config.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ConsumerConfig;
-import com.alibaba.dubbo.config.MethodConfig;
-import com.alibaba.dubbo.config.ModuleConfig;
-import com.alibaba.dubbo.config.MonitorConfig;
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.ProviderConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
 
 @ConfigurationProperties( prefix = "extension.dubbo" )
 public class DubboProperties {
-    private String            scan;
+    private String scan;
     private ApplicationConfig application;
-    private RegistryConfig    registry;
-    private ProtocolConfig    protocol;
-    private MonitorConfig     monitor;
-    private ProviderConfig    provider;
-    private ModuleConfig      module;
-    private MethodConfig      method;
-    private ConsumerConfig    consumer;
+    private RegistryConfig registry;
+    private ProtocolConfig protocol;
+    private MonitorConfig monitor;
+    private ProviderConfig provider;
+    private ModuleConfig module;
+    private MethodConfig method;
+    private ConsumerConfig consumer;
 
     public String getScan() {
         return scan;

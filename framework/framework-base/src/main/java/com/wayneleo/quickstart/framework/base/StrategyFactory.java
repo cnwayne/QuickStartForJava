@@ -7,11 +7,6 @@ import org.springframework.context.ApplicationContextAware;
 public abstract class StrategyFactory implements ApplicationContextAware {
     private static ApplicationContext context;
 
-    @Override
-    public void setApplicationContext( ApplicationContext applicationContext ) throws BeansException {
-        context = applicationContext;
-    }
-
     protected static final boolean containsBean( String beanName ) {
         return context.containsBean( beanName );
     }
@@ -29,5 +24,10 @@ public abstract class StrategyFactory implements ApplicationContextAware {
             return null;
         }
         return context.getBean( beanName, clazz );
+    }
+
+    @Override
+    public void setApplicationContext( ApplicationContext applicationContext ) throws BeansException {
+        context = applicationContext;
     }
 }

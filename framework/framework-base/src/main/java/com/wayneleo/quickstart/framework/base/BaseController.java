@@ -1,21 +1,21 @@
 package com.wayneleo.quickstart.framework.base;
 
-import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * <pre>
  * 基础Controller类型
  * 实现部分公用方法
  * </pre>
- * 
+ *
  * @author wayne
  */
 public abstract class BaseController {
     /**
      * 获取被访问路径
-     * 
+     *
      * @param request HttpServletRequest对象
      * @return URL字符串
      */

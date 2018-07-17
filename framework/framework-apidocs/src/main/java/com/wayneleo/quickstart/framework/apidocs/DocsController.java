@@ -1,9 +1,10 @@
 package com.wayneleo.quickstart.framework.apidocs;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @RestController
 public class DocsController {

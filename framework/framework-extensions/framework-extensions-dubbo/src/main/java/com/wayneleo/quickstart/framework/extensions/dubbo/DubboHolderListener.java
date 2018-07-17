@@ -9,14 +9,23 @@ import org.springframework.context.event.ContextClosedEvent;
 
 @SuppressWarnings( "rawtypes" )
 public class DubboHolderListener implements ApplicationListener {
-    private static final Logger LOGGER  = LoggerFactory.getLogger( DubboHolderListener.class );
-    private static Thread       holdThread;
-    private static Boolean      running = Boolean.FALSE;
+    private static final Logger LOGGER = LoggerFactory.getLogger( DubboHolderListener.class );
+    private static Thread holdThread;
+    private static Boolean running = Boolean.FALSE;
+
+    public static void stopApplicationContext( Boolean stop ) {
+        running = stop.booleanValue();
+        if ( null != holdThread ) {
+            holdThread.interrupt();
+            holdThread = null;
+        }
+    }
 
     @Override
     public void onApplicationEvent( ApplicationEvent event ) {
         if ( event instanceof ApplicationPreparedEvent ) {
-            if ( running == Boolean.FALSE ) running = Boolean.TRUE;
+            if ( running == Boolean.FALSE )
+                running = Boolean.TRUE;
             if ( holdThread == null ) {
                 holdThread = new Thread( new Runnable() {
                     @Override
@@ -42,14 +51,6 @@ public class DubboHolderListener implements ApplicationListener {
                 holdThread.interrupt();
                 holdThread = null;
             }
-        }
-    }
-
-    public static void stopApplicationContext( Boolean stop ) {
-        running = stop.booleanValue();
-        if ( null != holdThread ) {
-            holdThread.interrupt();
-            holdThread = null;
         }
     }
 }

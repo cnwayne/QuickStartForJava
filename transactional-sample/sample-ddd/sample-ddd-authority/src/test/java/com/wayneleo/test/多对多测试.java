@@ -1,35 +1,29 @@
 package com.wayneleo.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.wayneleo.quickstart.publish.test.BaseTest;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.User;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserAuthority;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserAuthorityDao;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserDao;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserGroup;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserGroupDao;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserRole;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserRoleDao;
+import com.wayneleo.quickstart.transactional.sample.ddd.authority.*;
 import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag;
-import com.wayneleo.quickstart.transactional.sample.ddd.tag.TagDao;
 import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag.TagApprovalStatus;
 import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag.TagGlobal;
 import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag.TagStatus;
+import com.wayneleo.quickstart.transactional.sample.ddd.tag.TagDao;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 public class 多对多测试 extends BaseTest {
     @Autowired
-    private UserDao          userDao;
+    private UserDao userDao;
     @Autowired
-    private UserGroupDao     groupDao;
+    private UserGroupDao groupDao;
     @Autowired
-    private UserRoleDao      roleDao;
+    private UserRoleDao roleDao;
     @Autowired
     private UserAuthorityDao authorityDao;
     @Autowired
-    private TagDao           tagDao;
+    private TagDao tagDao;
 
     @Override
     public void beforeTest() {
