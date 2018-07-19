@@ -4,34 +4,51 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
 public class Test01 {
+    private static EventBus bus = new EventBus();
+
+    static {
+        bus.register( new EventHandler() );
+    }
+
     public static void main( String[] args ) {
-        EventBus bus = new EventBus();
-        bus.register( new B() );
-        A a = new A( bus );
-        a.foo();
+        PeopleDomainModel domainModel = new PeopleDomainModel( "Willianm" );
+        bus.post( new RunningEvent( domainModel ) );
+        bus.post( new JumpingEvent( domainModel ) );
     }
 
-    public static class A {
-        EventBus bus;
+    public static class PeopleDomainModel {
+        private String name;
 
-        public A( EventBus bus ) {
-            this.bus = bus;
-        }
-
-        public void foo() {
-            bus.post( "foo" );
+        public PeopleDomainModel( String name ) {
+            this.name = name;
         }
     }
 
-    public static class B {
+    public static class RunningEvent {
+        private PeopleDomainModel domainModel;
+
+        public RunningEvent( PeopleDomainModel domainModel ) {
+            this.domainModel = domainModel;
+        }
+    }
+
+    public static class JumpingEvent {
+        private PeopleDomainModel domainModel;
+
+        public JumpingEvent( PeopleDomainModel domainModel ) {
+            this.domainModel = domainModel;
+        }
+    }
+
+    public static class EventHandler {
         @Subscribe
-        public void foo1( String c ) {
-            System.out.println( "hello" + c );
+        public void handleRunning( RunningEvent event ) {
+            System.out.println( event.domainModel.name + " is running" );
         }
 
         @Subscribe
-        public void foo2( String c ) {
-            System.out.println( "hello" + c );
+        public void handleJumping( JumpingEvent event ) {
+            System.out.println( event.domainModel.name + " is jumping" );
         }
     }
 }
