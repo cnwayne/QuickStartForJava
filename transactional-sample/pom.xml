@@ -24,6 +24,7 @@
         <module>sample-dubbo</module>
         <module>sample-mvc</module>
         <module>sample-spi</module>
+        <module>sample-osgi</module>
     </modules>
 
 </project>
