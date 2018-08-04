@@ -1,20 +1,33 @@
 package com.wayneleo.quickstart.framework.extensions.dubbo;
 
-import com.alibaba.dubbo.config.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ConsumerConfig;
+import com.alibaba.dubbo.config.MethodConfig;
+import com.alibaba.dubbo.config.ModuleConfig;
+import com.alibaba.dubbo.config.MonitorConfig;
+import com.alibaba.dubbo.config.ProtocolConfig;
+import com.alibaba.dubbo.config.ProviderConfig;
+import com.alibaba.dubbo.config.RegistryConfig;
+import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
+import com.wayneleo.quickstart.framework.core.conf.Application;
+import com.wayneleo.quickstart.framework.core.integrate.ExtApplication;
 
 @Configuration
-@EnableConfigurationProperties( DubboProperties.class )
-public class DubboAutoConfiguration {
+@EnableConfigurationProperties( DubboConfig.class )
+@DubboComponentScan( basePackages = {
+        Application.FRAMEWORK_BASE_PACKAGE, ExtApplication.BASE_PACKAGE
+} )
+public class DubboApplication {
     @Autowired
-    private DubboProperties dubboProperties;
+    private DubboConfig config;
 
     @Bean
     public ApplicationConfig requestApplicationConfig() {
-        ApplicationConfig applicationConfig = dubboProperties.getApplication();
+        ApplicationConfig applicationConfig = config.getApplication();
         if ( applicationConfig == null ) {
             applicationConfig = new ApplicationConfig();
         }
@@ -23,7 +36,7 @@ public class DubboAutoConfiguration {
 
     @Bean
     public RegistryConfig requestRegistryConfig() {
-        RegistryConfig registryConfig = dubboProperties.getRegistry();
+        RegistryConfig registryConfig = config.getRegistry();
         if ( registryConfig == null ) {
             registryConfig = new RegistryConfig();
         }
@@ -32,7 +45,7 @@ public class DubboAutoConfiguration {
 
     @Bean
     public ProtocolConfig requestProtocolConfig() {
-        ProtocolConfig protocolConfig = dubboProperties.getProtocol();
+        ProtocolConfig protocolConfig = config.getProtocol();
         if ( protocolConfig == null ) {
             protocolConfig = new ProtocolConfig();
         }
@@ -41,7 +54,7 @@ public class DubboAutoConfiguration {
 
     @Bean
     public MonitorConfig requestMonitorConfig() {
-        MonitorConfig monitorConfig = dubboProperties.getMonitor();
+        MonitorConfig monitorConfig = config.getMonitor();
         if ( monitorConfig == null ) {
             monitorConfig = new MonitorConfig();
         }
@@ -50,7 +63,7 @@ public class DubboAutoConfiguration {
 
     @Bean
     public ProviderConfig requestProviderConfig() {
-        ProviderConfig providerConfig = dubboProperties.getProvider();
+        ProviderConfig providerConfig = config.getProvider();
         if ( providerConfig == null ) {
             providerConfig = new ProviderConfig();
         }
@@ -59,16 +72,12 @@ public class DubboAutoConfiguration {
 
     @Bean
     public ModuleConfig requestModuleConfig() {
-        ModuleConfig moduleConfig = dubboProperties.getModule();
-        if ( moduleConfig == null ) {
-            moduleConfig = new ModuleConfig();
-        }
-        return moduleConfig;
+        return config.getModule();
     }
 
     @Bean
     public MethodConfig requestMethodConfig() {
-        MethodConfig methodConfig = dubboProperties.getMethod();
+        MethodConfig methodConfig = config.getMethod();
         if ( methodConfig == null ) {
             methodConfig = new MethodConfig();
         }
@@ -77,7 +86,7 @@ public class DubboAutoConfiguration {
 
     @Bean
     public ConsumerConfig requestConsumerConfig() {
-        ConsumerConfig consumerConfig = dubboProperties.getConsumer();
+        ConsumerConfig consumerConfig = config.getConsumer();
         if ( consumerConfig == null ) {
             consumerConfig = new ConsumerConfig();
         }

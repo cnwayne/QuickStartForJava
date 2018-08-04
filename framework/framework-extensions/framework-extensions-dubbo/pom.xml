@@ -9,11 +9,10 @@
     </parent>
     <artifactId>framework-extensions-dubbo</artifactId>
 
-
     <properties>
-        <dubbo.version>2.5.3</dubbo.version>
+        <dubbo.version>2.6.2</dubbo.version>
+        <zkclient.version>0.1</zkclient.version>
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -28,7 +27,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.101tec</groupId>
+            <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>${zkclient.version}</version>
             <exclusions>
@@ -47,4 +46,5 @@
             </exclusions>
         </dependency>
     </dependencies>
+
 </project>

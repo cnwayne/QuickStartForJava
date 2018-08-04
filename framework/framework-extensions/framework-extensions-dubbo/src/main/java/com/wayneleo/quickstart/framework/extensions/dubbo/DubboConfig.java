@@ -1,29 +1,30 @@
 package com.wayneleo.quickstart.framework.extensions.dubbo;
 
-import com.alibaba.dubbo.config.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ConsumerConfig;
+import com.alibaba.dubbo.config.MethodConfig;
+import com.alibaba.dubbo.config.ModuleConfig;
+import com.alibaba.dubbo.config.MonitorConfig;
+import com.alibaba.dubbo.config.ProtocolConfig;
+import com.alibaba.dubbo.config.ProviderConfig;
+import com.alibaba.dubbo.config.RegistryConfig;
 
-@ConfigurationProperties( prefix = "extension.dubbo" )
-public class DubboProperties {
-    private String scan;
+@ConfigurationProperties( "extension.dubbo" )
+public class DubboConfig {
     private ApplicationConfig application;
-    private RegistryConfig registry;
-    private ProtocolConfig protocol;
-    private MonitorConfig monitor;
-    private ProviderConfig provider;
-    private ModuleConfig module;
-    private MethodConfig method;
-    private ConsumerConfig consumer;
-
-    public String getScan() {
-        return scan;
-    }
-
-    public void setScan( String scan ) {
-        this.scan = scan;
-    }
+    private RegistryConfig    registry;
+    private ProtocolConfig    protocol;
+    private MonitorConfig     monitor;
+    private ProviderConfig    provider;
+    private ModuleConfig      module;
+    private MethodConfig      method;
+    private ConsumerConfig    consumer;
 
     public ApplicationConfig getApplication() {
+        if ( null == application ) {
+            application = new ApplicationConfig();
+        }
         return application;
     }
 
@@ -32,6 +33,9 @@ public class DubboProperties {
     }
 
     public RegistryConfig getRegistry() {
+        if ( null == registry ) {
+            registry = new RegistryConfig();
+        }
         return registry;
     }
 
@@ -40,6 +44,9 @@ public class DubboProperties {
     }
 
     public ProtocolConfig getProtocol() {
+        if ( null == protocol ) { 
+            protocol = new ProtocolConfig();
+        }
         return protocol;
     }
 
@@ -48,6 +55,9 @@ public class DubboProperties {
     }
 
     public MonitorConfig getMonitor() {
+        if ( null == monitor ) {
+            monitor = new MonitorConfig();
+        }
         return monitor;
     }
 
@@ -56,6 +66,9 @@ public class DubboProperties {
     }
 
     public ProviderConfig getProvider() {
+        if ( null == provider ) {
+            protocol = new ProtocolConfig();
+        }
         return provider;
     }
 
@@ -64,6 +77,9 @@ public class DubboProperties {
     }
 
     public ModuleConfig getModule() {
+        if ( null == module ) {
+            module = new ModuleConfig();
+        }
         return module;
     }
 
@@ -72,6 +88,9 @@ public class DubboProperties {
     }
 
     public MethodConfig getMethod() {
+        if ( null == method ) {
+            method = new MethodConfig();
+        }
         return method;
     }
 
@@ -80,6 +99,9 @@ public class DubboProperties {
     }
 
     public ConsumerConfig getConsumer() {
+        if ( null == consumer ) {
+            consumer = new ConsumerConfig();
+        }
         return consumer;
     }
 
