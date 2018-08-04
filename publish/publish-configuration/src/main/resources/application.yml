@@ -22,6 +22,19 @@ spring:
         hibernate.ddl-auto: update
         properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
+extension:
+    dubbo:
+        application.name: quickstart
+        module.name: QuickStart
+        registry.client: zkclient
+        registry.address: zookeeper://127.0.0.1:2182
+        protocol.name: dubbo
+        protocol.port: 28080
+        consumer.timeout: 1000
+        consumer.retries: 5
+        consumer.check: false
+        consumer.cluster: test
+
 cache:
     duration: 30000
 
