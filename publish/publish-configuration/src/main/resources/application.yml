@@ -34,6 +34,17 @@ extension:
         consumer.retries: 5
         consumer.check: false
         consumer.cluster: test
+    kafka:
+        bootstrap-servers: localhost:9092
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        consumer:
+            concurrency: 3
+            poll-timeout: 3000
+            group-id: consumer
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 cache:
     duration: 30000

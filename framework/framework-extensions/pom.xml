@@ -13,6 +13,7 @@
 
     <modules>
         <module>framework-extensions-dubbo</module>
+        <module>framework-extensions-kafka</module>
     </modules>
 
 
