@@ -1,12 +1,11 @@
 package com.wayneleo.quickstart.sample.osgi.demo;
 
-import org.osgi.framework.launch.Framework;
-import org.osgi.framework.launch.FrameworkFactory;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Map;
+import org.osgi.framework.launch.Framework;
+import org.osgi.framework.launch.FrameworkFactory;
 
 public class OSGiEngine {
     private static Framework framework;
@@ -43,16 +42,14 @@ public class OSGiEngine {
 
     private static FrameworkFactory getFrameworkFactory() throws Exception {
         String implName = "META-INF/services/org.osgi.framework.launch.FrameworkFactory";
-        URL url = OSGiEngine.class.getClassLoader()
-                .getResource( implName );
+        URL url = OSGiEngine.class.getClassLoader().getResource( implName );
         if ( null != url ) {
             BufferedReader br = new BufferedReader( new InputStreamReader( url.openStream() ) );
             try {
                 for ( String line = br.readLine(); null != line; line = br.readLine() ) {
                     line = line.trim();
-                    if ( ( line.length() > 0 ) && ( !"".equals( line.charAt( 0 ) ) ) ) {
-                        return ( FrameworkFactory ) Class.forName( line )
-                                .newInstance();
+                    if ( line.length() > 0 ) {
+                        return ( FrameworkFactory ) Class.forName( line ).newInstance();
                     }
                 }
             }

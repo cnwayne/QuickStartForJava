@@ -3,10 +3,10 @@ package com.wayneleo.test;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AAA {
-    public static final int WAN_UNIT = 10000;
+    public static final int WAN_UNIT         = 10000;
     public static final int MAX_RUNNING_TIME = 30000;
-    public static final int LOOPING_TIMES = 1000 * WAN_UNIT;
-    public static final int THREAD_NUM = 1;
+    public static final int LOOPING_TIMES    = 1000 * WAN_UNIT;
+    public static final int THREAD_NUM       = 1;
 
     public static void main( String[] args ) throws Exception {
         Counter counter = new Counter();
@@ -19,10 +19,12 @@ public class AAA {
         }
         Long startDatetime = System.currentTimeMillis();
         Long endDatetime = startDatetime;
-        while ( ( counter.getVal() < ( LOOPING_TIMES * THREAD_NUM ) ) && ( ( ( endDatetime = System.currentTimeMillis() ) - startDatetime ) < MAX_RUNNING_TIME ) ) {
+        while ( ( counter.getVal() < ( LOOPING_TIMES * THREAD_NUM ) ) &&
+                ( ( ( endDatetime = System.currentTimeMillis() ) - startDatetime ) < MAX_RUNNING_TIME ) ) {
             Thread.sleep( 0 );
         }
-        System.out.println( String.format( "计算结果是 : %d ;\n运行耗时是 : %d 毫秒。", counter.getVal(), ( endDatetime - startDatetime ) ) );
+        System.out.println(
+                String.format( "计算结果是 : %d ;\n运行耗时是 : %d 毫秒。", counter.getVal(), ( endDatetime - startDatetime ) ) );
     }
 
     public static class SampleThread extends Thread {
@@ -52,7 +54,7 @@ public class AAA {
 
     public static class Counter {
         private SimpleLock lock = new SimpleLock();
-        private Integer val = 0;
+        private Integer    val  = 0;
 
         public final void increment() {
             try {
@@ -75,8 +77,8 @@ public class AAA {
 
     public static class SimpleLock {
         private static final Integer UNLOCK_SYNC_VAL = 0;
-        private static final Integer LOCK_SYNC_VAL = 1;
-        private static AtomicInteger syncAtomic = new AtomicInteger( UNLOCK_SYNC_VAL );
+        private static final Integer LOCK_SYNC_VAL   = 1;
+        private static AtomicInteger syncAtomic      = new AtomicInteger( UNLOCK_SYNC_VAL );
 
         public void lock() {
             try {

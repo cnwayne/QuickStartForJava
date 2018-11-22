@@ -14,6 +14,8 @@
     <modules>
         <module>framework-extensions-dubbo</module>
         <module>framework-extensions-kafka</module>
+        <module>framework-extensions-redis</module>
+        <module>framework-extensions-zookeeper</module>
     </modules>
 
 
@@ -21,6 +23,11 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>framework-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>publish-test</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

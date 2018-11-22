@@ -1,10 +1,10 @@
 package com.wayneleo.test;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import javax.persistence.Column;
+import javax.persistence.Table;
 
 /*-
  * 测试子类是否能够通过反射拿到父类的注解、属性、方法
@@ -22,7 +22,8 @@ public class TestReflect {
             System.out.println( "class field[" + i + "] : " + fields[i].getName() );
             Annotation[] fieldAnnotations = fields[i].getAnnotations();
             for ( int k = 0; k < fieldAnnotations.length; k++ ) {
-                System.out.println( "\tannotation[" + i + "] of field : " + fieldAnnotations[k].annotationType().getName() );
+                System.out.println(
+                        "\tannotation[" + i + "] of field : " + fieldAnnotations[k].annotationType().getName() );
             }
         }
         Method[] methods = clazz.getMethods();
@@ -30,7 +31,8 @@ public class TestReflect {
             System.out.println( "class method[" + i + "] : " + methods[i].getName() );
             Annotation[] methodAnnotations = methods[i].getAnnotations();
             for ( int k = 0; k < methodAnnotations.length; k++ ) {
-                System.out.println( "\tannotation[" + i + "] of method : " + methodAnnotations[k].annotationType().getName() );
+                System.out.println(
+                        "\tannotation[" + i + "] of method : " + methodAnnotations[k].annotationType().getName() );
             }
         }
     }

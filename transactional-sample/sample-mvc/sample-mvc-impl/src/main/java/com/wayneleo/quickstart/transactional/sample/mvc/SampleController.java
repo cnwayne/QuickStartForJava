@@ -1,17 +1,16 @@
 package com.wayneleo.quickstart.transactional.sample.mvc;
 
+import java.util.Date;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import com.wayneleo.quickstart.framework.base.BaseController;
 import com.wayneleo.quickstart.framework.base.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Date;
 
 @Api( tags = "样例接口" )
 @RestController( "W_SampleController" )
@@ -36,7 +35,9 @@ public class SampleController extends BaseController {
     }
 
     @ApiOperation( value = "接口01", notes = "返回正常结果" )
-    @ApiImplicitParams( { @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ), } )
+    @ApiImplicitParams( {
+            @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ),
+    } )
     @RequestMapping( method = RequestMethod.POST )
     public SampleResp post( @RequestParam( name = "name" ) String name ) {
         SampleResp resp = new SampleResp();
@@ -46,7 +47,9 @@ public class SampleController extends BaseController {
     }
 
     @ApiOperation( value = "接口02", notes = "返回正常结果" )
-    @ApiImplicitParams( { @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ), } )
+    @ApiImplicitParams( {
+            @ApiImplicitParam( paramType = "query", name = "name", value = "用户名", required = true ),
+    } )
     @RequestMapping( method = RequestMethod.GET )
     public SampleResp get( @RequestParam( name = "name" ) String name ) {
         SampleResp resp = new SampleResp();

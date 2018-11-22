@@ -2,6 +2,7 @@ package com.wayneleo.quickstart.sample.osgi.test;
 
 import com.wayneleo.quickstart.framework.base.BaseResponse;
 
+@SuppressWarnings( "serial" )
 public class SimpleResp extends BaseResponse {
     private String datetime;
 

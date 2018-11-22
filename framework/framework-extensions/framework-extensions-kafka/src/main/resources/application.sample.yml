@@ -1,6 +1,6 @@
 extension:
     kafka:
-        bootstrap-servers: localhost:9092
+        bootstrap-servers: 118.190.199.77:9092
         producer:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -10,3 +10,7 @@ extension:
             group-id: consumer
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        kerberoz:
+            key-tab: /etc/security/keytabs/kafka_client.keytab
+            principal: kafka-client-1@EXAMPLE.COM
+            

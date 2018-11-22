@@ -44,7 +44,7 @@ public class DubboConfig {
     }
 
     public ProtocolConfig getProtocol() {
-        if ( null == protocol ) { 
+        if ( null == protocol ) {
             protocol = new ProtocolConfig();
         }
         return protocol;

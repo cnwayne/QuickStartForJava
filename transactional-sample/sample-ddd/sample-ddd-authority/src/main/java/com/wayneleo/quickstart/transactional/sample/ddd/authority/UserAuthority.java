@@ -1,17 +1,23 @@
 package com.wayneleo.quickstart.transactional.sample.ddd.authority;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table( name = "test_authority" )
 @SuppressWarnings( "serial" )
 public class UserAuthority implements Serializable {
-    private String id;    // 主键
-    private String name;  // 角色名称
-    private String desc;  // 角色描述
-    private String mark;  // 角色标识
+    private String         id;    // 主键
+    private String         name;  // 角色名称
+    private String         desc;  // 角色描述
+    private String         mark;  // 角色标识
     private List<UserRole> roles; // 拥有该权限的所有角色
 
     @Id
@@ -51,7 +57,11 @@ public class UserAuthority implements Serializable {
         this.mark = mark;
     }
 
-    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserRole.class, fetch = FetchType.LAZY, mappedBy = "authorities" )
+    @ManyToMany(
+        cascade = CascadeType.REFRESH,
+        targetEntity = UserRole.class,
+        fetch = FetchType.LAZY,
+        mappedBy = "authorities" )
     public List<UserRole> getRoles() {
         return roles;
     }

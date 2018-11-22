@@ -1,7 +1,7 @@
 package com.wayneleo.quickstart.sample.osgi.test;
 
-import com.wayneleo.quickstart.framework.base.StrategyFactory;
 import org.springframework.stereotype.Component;
+import com.wayneleo.quickstart.framework.base.StrategyFactory;
 
 @Component
 public class ServiceFactory extends StrategyFactory {

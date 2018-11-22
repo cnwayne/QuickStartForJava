@@ -1,14 +1,13 @@
 package com.wayneleo.quickstart.transactional.sample.mvc;
 
-import com.wayneleo.quickstart.framework.base.BaseResponse;
-
 import java.util.Date;
+import com.wayneleo.quickstart.framework.base.BaseResponse;
 
 public class SampleResp extends BaseResponse {
     private static final long serialVersionUID = 2358402166414827347L;
-    private String id;
-    private String name;
-    private Date datetime;
+    private String            id;
+    private String            name;
+    private Date              datetime;
 
     public String getId() {
         return id;

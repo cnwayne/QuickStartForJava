@@ -1,9 +1,17 @@
 package com.wayneleo.quickstart.transactional.sample.ddd.authority;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  * 用户角色模型
@@ -14,9 +22,9 @@ import java.util.List;
 @Table( name = "test_role" )
 @SuppressWarnings( "serial" )
 public class UserRole implements Serializable {
-    private String id;          // 主键
-    private String name;        // 角色名称
-    private List<User> users;       // 拥有该角色的所有用户
+    private String              id;          // 主键
+    private String              name;        // 角色名称
+    private List<User>          users;       // 拥有该角色的所有用户
     private List<UserAuthority> authorities; // 角色所拥有的权限
 
     @Id
@@ -39,7 +47,10 @@ public class UserRole implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = User.class, fetch = FetchType.LAZY )
-    @JoinTable( name = "test_role_and_user", joinColumns = @JoinColumn( name = "role_id" ), inverseJoinColumns = @JoinColumn( name = "user_id" ) )
+    @JoinTable(
+        name = "test_role_and_user",
+        joinColumns = @JoinColumn( name = "role_id" ),
+        inverseJoinColumns = @JoinColumn( name = "user_id" ) )
     public List<User> getUsers() {
         return users;
     }
@@ -49,7 +60,10 @@ public class UserRole implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserAuthority.class, fetch = FetchType.LAZY )
-    @JoinTable( name = "test_role_and_authority", joinColumns = @JoinColumn( name = "role_id" ), inverseJoinColumns = @JoinColumn( name = "authority_id" ) )
+    @JoinTable(
+        name = "test_role_and_authority",
+        joinColumns = @JoinColumn( name = "role_id" ),
+        inverseJoinColumns = @JoinColumn( name = "authority_id" ) )
     public List<UserAuthority> getAuthorities() {
         return authorities;
     }

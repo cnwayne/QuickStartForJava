@@ -1,10 +1,9 @@
 package com.wayneleo.quickstart.transactional.sample.spi.consumer;
 
-import com.wayneleo.quickstart.transactional.sample.spi.api.Something;
-
 import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.ServiceLoader;
+import com.wayneleo.quickstart.transactional.sample.spi.api.Something;
 
 public class Consumer {
     public static final int LOOPING_TIMES = 10000;
@@ -21,7 +20,13 @@ public class Consumer {
             newThing();
         }
         long total = System.currentTimeMillis() - start;
-        System.out.println( String.format( "执行了 %d 次, 共用时 %d 毫秒, 平均每次用时 %s 毫秒 !", LOOPING_TIMES, total, BigDecimal.valueOf( total ).divide( BigDecimal.valueOf( LOOPING_TIMES ), 2, BigDecimal.ROUND_HALF_UP ) ) );
+        System.out.println(
+                String.format(
+                        "执行了 %d 次, 共用时 %d 毫秒, 平均每次用时 %s 毫秒 !",
+                        LOOPING_TIMES,
+                        total,
+                        BigDecimal.valueOf( total )
+                                .divide( BigDecimal.valueOf( LOOPING_TIMES ), 2, BigDecimal.ROUND_HALF_UP ) ) );
     }
 
     public static Something newThing() {

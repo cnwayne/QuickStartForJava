@@ -1,13 +1,19 @@
 package com.wayneleo.quickstart.transactional.sample.ddd.authority;
 
-import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import com.wayneleo.quickstart.transactional.sample.ddd.tag.Tag;
 
 /**
  * 用户模型
@@ -18,13 +24,13 @@ import java.util.Set;
 @Table( name = "test_user" )
 @SuppressWarnings( "serial" )
 public class User implements Serializable {
-    private String id;
-    private String name;
-    private int sex;
-    private int age;
+    private String          id;
+    private String          name;
+    private int             sex;
+    private int             age;
     private List<UserGroup> groups;
-    private List<UserRole> roles;
-    private List<Tag> tags;
+    private List<UserRole>  roles;
+    private List<Tag>       tags;
 
     @Id
     @Column( name = "user_id", nullable = false, length = 32 )
@@ -63,7 +69,11 @@ public class User implements Serializable {
         this.age = age;
     }
 
-    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserGroup.class, mappedBy = "users", fetch = FetchType.LAZY )
+    @ManyToMany(
+        cascade = CascadeType.REFRESH,
+        targetEntity = UserGroup.class,
+        mappedBy = "users",
+        fetch = FetchType.LAZY )
     public List<UserGroup> getGroups() {
         return groups;
     }
@@ -72,7 +82,11 @@ public class User implements Serializable {
         this.groups = groups;
     }
 
-    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserRole.class, mappedBy = "users", fetch = FetchType.LAZY )
+    @ManyToMany(
+        cascade = CascadeType.REFRESH,
+        targetEntity = UserRole.class,
+        mappedBy = "users",
+        fetch = FetchType.LAZY )
     public List<UserRole> getRoles() {
         return roles;
     }

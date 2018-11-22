@@ -1,0 +1,8 @@
+extension:
+    redis:
+        max-pool-count: 10
+        max-redirects: 6
+        timeout: 20000
+        password: 1qaz@WSX
+        nodes[0]: 140.143.15.129:6379
+

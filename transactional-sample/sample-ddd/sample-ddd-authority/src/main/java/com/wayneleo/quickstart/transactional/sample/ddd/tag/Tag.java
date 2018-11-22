@@ -1,28 +1,35 @@
 package com.wayneleo.quickstart.transactional.sample.ddd.tag;
 
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.User;
-import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserGroup;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import com.wayneleo.quickstart.transactional.sample.ddd.authority.User;
+import com.wayneleo.quickstart.transactional.sample.ddd.authority.UserGroup;
 
 @Entity
 @Table( name = "test_tag" )
 @SuppressWarnings( "serial" )
 public class Tag implements Serializable {
-    private String id;                 // 主健
-    private String name;               // 标签名称
-    private TagGlobal global;             // 是否是全行可见;全行可见与只属于某些用户组不能同时满足
-    private List<UserGroup> groups;             // 哪些用户组拥有这个标签
-    private TagStatus status;             // 标签状态
-    private User creater;            // 创建者
-    private String createDatetime;     // 创建时间
-    private User lastModifier;       // 最后修改者
-    private String lastModifyDatetime; // 最后修改时间
+    private String            id;                 // 主健
+    private String            name;               // 标签名称
+    private TagGlobal         global;             // 是否是全行可见;全行可见与只属于某些用户组不能同时满足
+    private List<UserGroup>   groups;             // 哪些用户组拥有这个标签
+    private TagStatus         status;             // 标签状态
+    private User              creater;            // 创建者
+    private String            createDatetime;     // 创建时间
+    private User              lastModifier;       // 最后修改者
+    private String            lastModifyDatetime; // 最后修改时间
     private TagApprovalStatus approvalStatus;     // 最终审批状态
-    private User approver;           // 最后审批者
-    private String approvalDatetime;   // 最后审批时间
+    private User              approver;           // 最后审批者
+    private String            approvalDatetime;   // 最后审批时间
 
     @Id
     @Column( name = "tag_id", length = 32, nullable = false )
@@ -52,7 +59,11 @@ public class Tag implements Serializable {
         this.global = global;
     }
 
-    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserGroup.class, mappedBy = "tags", fetch = FetchType.LAZY )
+    @ManyToMany(
+        cascade = CascadeType.REFRESH,
+        targetEntity = UserGroup.class,
+        mappedBy = "tags",
+        fetch = FetchType.LAZY )
     public List<UserGroup> getGroups() {
         return groups;
     }

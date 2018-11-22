@@ -5,7 +5,6 @@ import com.google.common.eventbus.Subscribe;
 
 public class Test01 {
     private static EventBus bus = new EventBus();
-
     static {
         bus.register( new EventHandler() );
     }

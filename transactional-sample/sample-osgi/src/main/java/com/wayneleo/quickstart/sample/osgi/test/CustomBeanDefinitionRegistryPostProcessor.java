@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
     //@Autowired
     //BeanNameGenerator beanNameGenerator;
-
     @Override
     public void postProcessBeanDefinitionRegistry( BeanDefinitionRegistry registry ) throws BeansException {
         RootBeanDefinition beanDefinition = new RootBeanDefinition();

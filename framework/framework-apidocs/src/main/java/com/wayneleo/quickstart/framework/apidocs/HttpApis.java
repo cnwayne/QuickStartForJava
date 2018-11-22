@@ -10,10 +10,23 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 public class HttpApis {
     public static Docket docs() {
-        return new Docket( DocumentationType.SWAGGER_2 ).groupName( "HttpApis" ).genericModelSubstitutes( DeferredResult.class ).useDefaultResponseMessages( false ).forCodeGeneration( true ).pathMapping( "/" ).select().apis( RequestHandlerSelectors.basePackage( "com.wayneleo.quickstart.services" ) ).paths( PathSelectors.regex( "/api/.*" ) ).build().apiInfo( apiInfo() );
+        return new Docket( DocumentationType.SWAGGER_2 ).groupName( "HttpApis" )
+                .genericModelSubstitutes( DeferredResult.class )
+                .useDefaultResponseMessages( false )
+                .forCodeGeneration( true )
+                .pathMapping( "/" )
+                .select()
+                .apis( RequestHandlerSelectors.basePackage( "com.wayneleo.quickstart.services" ) )
+                .paths( PathSelectors.regex( "/api/.*" ) )
+                .build()
+                .apiInfo( apiInfo() );
     }
 
     private static ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title( "在线接口文档" ).description( "本文档只针对系统中的HTTP接口" ).termsOfServiceUrl( "" ).version( "20180329" ).build();
+        return new ApiInfoBuilder().title( "在线接口文档" )
+                .description( "本文档只针对系统中的HTTP接口" )
+                .termsOfServiceUrl( "" )
+                .version( "20180329" )
+                .build();
     }
 }

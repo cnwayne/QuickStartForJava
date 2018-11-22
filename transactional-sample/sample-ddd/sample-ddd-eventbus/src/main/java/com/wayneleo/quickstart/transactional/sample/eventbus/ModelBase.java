@@ -1,7 +1,7 @@
 package com.wayneleo.quickstart.transactional.sample.eventbus;
 
-import javax.persistence.Column;
 import java.io.Serializable;
+import javax.persistence.Column;
 
 @SuppressWarnings( "serial" )
 public class ModelBase implements Serializable {

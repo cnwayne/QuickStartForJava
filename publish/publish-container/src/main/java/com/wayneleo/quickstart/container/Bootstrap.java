@@ -1,8 +1,8 @@
 package com.wayneleo.quickstart.container;
 
-import com.wayneleo.quickstart.framework.core.conf.Application;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import com.wayneleo.quickstart.framework.core.conf.Application;
 
 public class Bootstrap extends SpringBootServletInitializer {
     @Override

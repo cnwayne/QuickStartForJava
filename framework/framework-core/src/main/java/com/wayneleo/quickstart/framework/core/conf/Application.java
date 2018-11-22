@@ -1,6 +1,6 @@
 package com.wayneleo.quickstart.framework.core.conf;
 
-import com.wayneleo.quickstart.framework.core.integrate.ExtApplication;
+import javax.servlet.MultipartConfigElement;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import javax.servlet.MultipartConfigElement;
+import com.wayneleo.quickstart.framework.core.integrate.ExtApplication;
 
 @EnableAutoConfiguration
 @EnableScheduling
