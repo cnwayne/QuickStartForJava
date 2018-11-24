@@ -1,7 +1,9 @@
 package com.wayneleo.quickstart.transactional.sample.mvc;
 
+import org.springframework.stereotype.Service;
 import com.wayneleo.quickstart.framework.base.BaseService;
 
+@Service
 public class SampleService extends BaseService implements ISampleService { // ISampleService是个接口，应该写在service-api里面
     private static final long serialVersionUID = 6046909713505643651L;
 
