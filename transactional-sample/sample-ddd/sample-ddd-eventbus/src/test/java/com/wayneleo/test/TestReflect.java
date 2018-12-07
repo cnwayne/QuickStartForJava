@@ -22,8 +22,7 @@ public class TestReflect {
             System.out.println( "class field[" + i + "] : " + fields[i].getName() );
             Annotation[] fieldAnnotations = fields[i].getAnnotations();
             for ( int k = 0; k < fieldAnnotations.length; k++ ) {
-                System.out.println(
-                        "\tannotation[" + i + "] of field : " + fieldAnnotations[k].annotationType().getName() );
+                System.out.println( "\tannotation[" + i + "] of field : " + fieldAnnotations[k].annotationType().getName() );
             }
         }
         Method[] methods = clazz.getMethods();
@@ -31,8 +30,7 @@ public class TestReflect {
             System.out.println( "class method[" + i + "] : " + methods[i].getName() );
             Annotation[] methodAnnotations = methods[i].getAnnotations();
             for ( int k = 0; k < methodAnnotations.length; k++ ) {
-                System.out.println(
-                        "\tannotation[" + i + "] of method : " + methodAnnotations[k].annotationType().getName() );
+                System.out.println( "\tannotation[" + i + "] of method : " + methodAnnotations[k].annotationType().getName() );
             }
         }
     }

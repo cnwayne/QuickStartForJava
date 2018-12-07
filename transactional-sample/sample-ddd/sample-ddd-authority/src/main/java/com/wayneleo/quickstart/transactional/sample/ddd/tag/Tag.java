@@ -59,11 +59,7 @@ public class Tag implements Serializable {
         this.global = global;
     }
 
-    @ManyToMany(
-        cascade = CascadeType.REFRESH,
-        targetEntity = UserGroup.class,
-        mappedBy = "tags",
-        fetch = FetchType.LAZY )
+    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserGroup.class, mappedBy = "tags", fetch = FetchType.LAZY )
     public List<UserGroup> getGroups() {
         return groups;
     }

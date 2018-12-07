@@ -69,11 +69,7 @@ public class User implements Serializable {
         this.age = age;
     }
 
-    @ManyToMany(
-        cascade = CascadeType.REFRESH,
-        targetEntity = UserGroup.class,
-        mappedBy = "users",
-        fetch = FetchType.LAZY )
+    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserGroup.class, mappedBy = "users", fetch = FetchType.LAZY )
     public List<UserGroup> getGroups() {
         return groups;
     }
@@ -82,11 +78,7 @@ public class User implements Serializable {
         this.groups = groups;
     }
 
-    @ManyToMany(
-        cascade = CascadeType.REFRESH,
-        targetEntity = UserRole.class,
-        mappedBy = "users",
-        fetch = FetchType.LAZY )
+    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserRole.class, mappedBy = "users", fetch = FetchType.LAZY )
     public List<UserRole> getRoles() {
         return roles;
     }

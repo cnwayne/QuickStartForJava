@@ -48,10 +48,7 @@ public class UserGroup implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = User.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_group_and_user",
-        joinColumns = @JoinColumn( name = "group_id" ),
-        inverseJoinColumns = @JoinColumn( name = "user_id" ) )
+    @JoinTable( name = "test_group_and_user", joinColumns = @JoinColumn( name = "group_id" ), inverseJoinColumns = @JoinColumn( name = "user_id" ) )
     public List<User> getUsers() {
         return users;
     }
@@ -61,10 +58,7 @@ public class UserGroup implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = Tag.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_group_and_tag",
-        joinColumns = @JoinColumn( name = "group_id" ),
-        inverseJoinColumns = @JoinColumn( name = "tag_id" ) )
+    @JoinTable( name = "test_group_and_tag", joinColumns = @JoinColumn( name = "group_id" ), inverseJoinColumns = @JoinColumn( name = "tag_id" ) )
     public List<Tag> getTags() {
         return tags;
     }

@@ -57,11 +57,7 @@ public class UserAuthority implements Serializable {
         this.mark = mark;
     }
 
-    @ManyToMany(
-        cascade = CascadeType.REFRESH,
-        targetEntity = UserRole.class,
-        fetch = FetchType.LAZY,
-        mappedBy = "authorities" )
+    @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserRole.class, fetch = FetchType.LAZY, mappedBy = "authorities" )
     public List<UserRole> getRoles() {
         return roles;
     }

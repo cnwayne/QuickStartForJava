@@ -47,10 +47,7 @@ public class UserRole implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = User.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_role_and_user",
-        joinColumns = @JoinColumn( name = "role_id" ),
-        inverseJoinColumns = @JoinColumn( name = "user_id" ) )
+    @JoinTable( name = "test_role_and_user", joinColumns = @JoinColumn( name = "role_id" ), inverseJoinColumns = @JoinColumn( name = "user_id" ) )
     public List<User> getUsers() {
         return users;
     }
@@ -60,10 +57,7 @@ public class UserRole implements Serializable {
     }
 
     @ManyToMany( cascade = CascadeType.REFRESH, targetEntity = UserAuthority.class, fetch = FetchType.LAZY )
-    @JoinTable(
-        name = "test_role_and_authority",
-        joinColumns = @JoinColumn( name = "role_id" ),
-        inverseJoinColumns = @JoinColumn( name = "authority_id" ) )
+    @JoinTable( name = "test_role_and_authority", joinColumns = @JoinColumn( name = "role_id" ), inverseJoinColumns = @JoinColumn( name = "authority_id" ) )
     public List<UserAuthority> getAuthorities() {
         return authorities;
     }

@@ -19,12 +19,10 @@ public class AAA {
         }
         Long startDatetime = System.currentTimeMillis();
         Long endDatetime = startDatetime;
-        while ( ( counter.getVal() < ( LOOPING_TIMES * THREAD_NUM ) ) &&
-                ( ( ( endDatetime = System.currentTimeMillis() ) - startDatetime ) < MAX_RUNNING_TIME ) ) {
+        while ( ( counter.getVal() < ( LOOPING_TIMES * THREAD_NUM ) ) && ( ( ( endDatetime = System.currentTimeMillis() ) - startDatetime ) < MAX_RUNNING_TIME ) ) {
             Thread.sleep( 0 );
         }
-        System.out.println(
-                String.format( "计算结果是 : %d ;\n运行耗时是 : %d 毫秒。", counter.getVal(), ( endDatetime - startDatetime ) ) );
+        System.out.println( String.format( "计算结果是 : %d ;\n运行耗时是 : %d 毫秒。", counter.getVal(), ( endDatetime - startDatetime ) ) );
     }
 
     public static class SampleThread extends Thread {
