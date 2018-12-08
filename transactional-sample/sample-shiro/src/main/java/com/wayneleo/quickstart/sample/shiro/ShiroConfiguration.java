@@ -3,6 +3,7 @@ package com.wayneleo.quickstart.sample.shiro;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javax.servlet.Filter;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler;
@@ -51,9 +52,19 @@ public class ShiroConfiguration {
     }
 
     @Bean
-    public ShiroFilterFactoryBean shiroFilterFactoryBean( SecurityManager securityManager, PermissionDefinition permissionDefinition ) {
+    public ShiroFilterFactoryBean shiroFilterFactoryBean( SecurityManager securityManager, PermissionDefinition permissionDefinition, Collection<FilterDefinition> filterDefinitions ) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager( securityManager );
+        if ( null != filterDefinitions && !filterDefinitions.isEmpty() ) {
+            Map<String, Filter> filters = new LinkedHashMap<>( shiroFilterFactoryBean.getFilters() );
+            for ( FilterDefinition filterDefinition : filterDefinitions ) {
+                if ( null == filterDefinition.getFilter() ) {
+                    continue;
+                }
+                filters.put( filterDefinition.getName(), filterDefinition.getFilter() );
+            }
+            shiroFilterFactoryBean.setFilters( filters );
+        }
         Map<String, String> map = new LinkedHashMap<String, String>();
         map.put( "/logout", "logout" );
         map.putAll( permissionDefinition );
