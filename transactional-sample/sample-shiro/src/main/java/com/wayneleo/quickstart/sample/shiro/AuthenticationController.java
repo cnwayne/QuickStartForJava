@@ -1,6 +1,7 @@
 package com.wayneleo.quickstart.sample.shiro;
 
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,9 @@ public class AuthenticationController {
 
     @GetMapping( "/frontend/login" )
     public Response frontendLogin( String username ) {
+        if ( StringUtils.isEmpty( username ) ) {
+            return buildResponse( HttpServletResponse.SC_BAD_REQUEST );
+        }
         try {
             AuthenticationToken token = new Realm4Frontend.Token( username );
             SecurityUtils.getSubject().login( token );
@@ -53,6 +57,9 @@ public class AuthenticationController {
 
     @GetMapping( "/backend/login" )
     public Response backendLogin( String username ) {
+        if ( StringUtils.isEmpty( username ) ) {
+            return buildResponse( HttpServletResponse.SC_BAD_REQUEST );
+        }
         try {
             AuthenticationToken token = new Realm4Backend.Token( username );
             SecurityUtils.getSubject().login( token );

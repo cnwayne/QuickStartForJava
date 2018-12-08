@@ -1,0 +1,16 @@
+
+##############################
+#
+# !!!!!! 配置的时候注意顺序 !!!!!!
+#
+#  分支(子)路径要尽量配置在前面!
+#  否则父路径的权限将覆盖子路径!!
+#
+##############################
+
+permissions:
+    /sample/shiro/frontend/login: anon
+    /sample/shiro/backend/login: anon
+    /sample/shiro/frontend: perms["permission-frontend-A, permission-frontend-B"]
+    /sample/shiro/backend: perms["permission-backend-A, permission-backend-B"]
+    /sample/** : authc
