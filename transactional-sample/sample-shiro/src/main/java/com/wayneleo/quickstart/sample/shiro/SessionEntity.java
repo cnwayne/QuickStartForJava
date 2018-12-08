@@ -13,27 +13,27 @@ import com.wayneleo.quickstart.framework.base.BaseEntity;
 @Entity( name = "sample_shiro_session" )
 public class SessionEntity extends BaseEntity {
     private String id;
-    private String session;
     private String username;
+    private byte[] session;
 
     public SessionEntity() {}
 
-    public SessionEntity( String id, String session, String username ) {
+    public SessionEntity( String id, String username, byte[] session ) {
         super();
         this.id = id;
-        this.session = session;
         this.username = username;
+        this.session = session;
     }
 
-    public SessionEntity( Serializable id, String session, String username ) {
+    public SessionEntity( Serializable id, String username, byte[] session ) {
         super();
         this.id = String.valueOf( id );
-        this.session = session;
         this.username = username;
+        this.session = session;
     }
 
     @Id
-    @Column( name = "id", length = 36 )
+    @Column( name = "id", length = 32 )
     public String getId() {
         return id;
     }
@@ -44,12 +44,11 @@ public class SessionEntity extends BaseEntity {
 
     @Lob
     @Basic( fetch = FetchType.LAZY )
-    @Column( name = "session", length = 5000 )
-    public String getSession() {
+    public byte[] getSession() {
         return session;
     }
 
-    public void setSession( String session ) {
+    public void setSession( byte[] session ) {
         this.session = session;
     }
 

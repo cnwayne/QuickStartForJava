@@ -11,6 +11,6 @@
 permissions:
     /sample/shiro/frontend/login: anon
     /sample/shiro/backend/login: anon
-    /sample/shiro/frontend: perms["permission-frontend-A, permission-frontend-B"]
-    /sample/shiro/backend: perms["permission-backend-A, permission-backend-B"]
+    /sample/shiro/frontend: perms[permission-frontend-A, permission-frontend-B]
+    /sample/shiro/backend: perms[permission-backend-A, permission-backend-B]
     /sample/** : authc
