@@ -1,8 +1,7 @@
 
 # 一、为什么要创建这个项目
 
-每次在接到一个新产品之后，我们都不可避免需要重头开始搭建框架，这个过程或多或少都有些相似，Java 的常用框架 Spring 的解决办法就是现在的 Spring-Boot，虽然 Spring-Boot 已经足够简单快速，但我们还需要一个很重要的工程性的东西:_模块化_。为什么它很重要，因为_模块化_是多人协作、敏捷开发、微服务等很多时髦解决方案的基础。
-
+快！快！！快！！！
 
 # 二、怎么快速开始
 
@@ -25,10 +24,10 @@ mvn -version
 cd ./QuickStart
 
 # 将所有模块编译并安装到本地Maven库
-mvn clean install
+mvn clean install -Dmaven.test.skip=true
 
 # 进入发布模块
-cd ./quickstart-publish/quickstart-publish-embed
+cd ./publish/publish-embed/
 
 # 打包
 mvn clean package

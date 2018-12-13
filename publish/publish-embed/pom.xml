@@ -25,7 +25,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.parent.parent.artifactId}-bootstrap-${project.version}</finalName>
+        <finalName>quickstart-bootstrap-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

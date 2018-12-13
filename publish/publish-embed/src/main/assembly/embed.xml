@@ -11,7 +11,7 @@
 
     <files>
         <file>
-            <source>${project.build.directory}/${project.parent.parent.artifactId}-bootstrap-${project.version}.jar
+            <source>${project.build.directory}/quickstart-bootstrap-${project.version}.jar
             </source>
             <outputDirectory>/core</outputDirectory>
         </file>
