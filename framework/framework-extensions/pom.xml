@@ -12,6 +12,7 @@
 
 
     <modules>
+        <module>framework-extensions-configuration</module>
         <module>framework-extensions-dubbo</module>
         <module>framework-extensions-kafka</module>
         <module>framework-extensions-redis</module>
