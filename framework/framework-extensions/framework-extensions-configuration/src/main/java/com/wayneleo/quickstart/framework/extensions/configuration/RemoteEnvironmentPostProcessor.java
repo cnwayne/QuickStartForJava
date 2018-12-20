@@ -42,7 +42,7 @@ public class RemoteEnvironmentPostProcessor implements EnvironmentPostProcessor 
     }
 
     private Configuration readConfiguration( PropertySource<?> propertySource ) {
-        Object tmp = propertySource.getProperty( Configuration.CENTRE_ADDRESS );
+        Object tmp = propertySource.getProperty( Configuration.CENTER_ADDRESS );
         String centreAddress = ( null == tmp ) ? "" : String.valueOf( tmp );
         tmp = propertySource.getProperty( Configuration.CENTER_SECRET );
         String secret = ( null == tmp ) ? "" : String.valueOf( tmp );

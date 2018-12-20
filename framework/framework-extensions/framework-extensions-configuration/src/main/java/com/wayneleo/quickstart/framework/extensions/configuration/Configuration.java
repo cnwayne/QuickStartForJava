@@ -1,8 +1,8 @@
 package com.wayneleo.quickstart.framework.extensions.configuration;
 
 public class Configuration {
-    public static final String CENTRE_ADDRESS = "centre.address";
-    public static final String CENTER_SECRET  = "centre.secret";
+    public static final String CENTER_ADDRESS = "center.address";
+    public static final String CENTER_SECRET  = "center.secret";
     public static final String APP_NAMESPACE  = "app.namespace";
     private String             address;
     private String             secret;
