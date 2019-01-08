@@ -28,7 +28,7 @@ public class RemoteEnvironmentPostProcessor implements EnvironmentPostProcessor 
             Configuration configuration = readConfiguration( propertySource );
             InputStream in = null;
             Properties properties = null;
-            for ( int i = 0; i < configuration.getNamespace().length; i++ ) {
+            for ( int i = 0; i < configuration.getName().length; i++ ) {
                 in = readRemote( configuration );
                 properties = new Properties();
                 properties.load( in );
@@ -46,17 +46,17 @@ public class RemoteEnvironmentPostProcessor implements EnvironmentPostProcessor 
         String centreAddress = ( null == tmp ) ? "" : String.valueOf( tmp );
         tmp = propertySource.getProperty( Configuration.CENTER_SECRET );
         String secret = ( null == tmp ) ? "" : String.valueOf( tmp );
-        tmp = propertySource.getProperty( Configuration.APP_NAMESPACE );
-        String[] namespaces = ( null == tmp ) ? new String[] {} : String.valueOf( tmp ).split( ";" );
+        tmp = propertySource.getProperty( Configuration.APP_NAME );
+        String[] names = ( null == tmp ) ? new String[] {} : String.valueOf( tmp ).split( ";" );
         Configuration configuration = new Configuration();
         configuration.setAddress( centreAddress );
         configuration.setSecret( secret );
-        configuration.setNamespace( namespaces );
+        configuration.setName( names );
         return configuration;
     }
 
     private InputStream readRemote( Configuration configuration ) throws Exception {
-        String params = "secret=" + configuration.getSecret() + "&namespace=" + configuration.getNamespace();
+        String params = "secret=" + configuration.getSecret() + "&name=" + configuration.getName();
         HttpURLConnection connection = null;
         OutputStream os = null;
         try {

@@ -3,10 +3,10 @@ package com.wayneleo.quickstart.framework.extensions.configuration;
 public class Configuration {
     public static final String CENTER_ADDRESS = "center.address";
     public static final String CENTER_SECRET  = "center.secret";
-    public static final String APP_NAMESPACE  = "app.namespace";
+    public static final String APP_NAME       = "app.name";
     private String             address;
     private String             secret;
-    private String[]           namespace;
+    private String[]           name;
 
     public String getAddress() {
         return address;
@@ -24,11 +24,11 @@ public class Configuration {
         this.secret = secret;
     }
 
-    public String[] getNamespace() {
-        return namespace;
+    public String[] getName() {
+        return name;
     }
 
-    public void setNamespace( String[] namespace ) {
-        this.namespace = namespace;
+    public void setName( String[] name ) {
+        this.name = name;
     }
 }

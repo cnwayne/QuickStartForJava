@@ -3,17 +3,18 @@
 <configuration>
 
     <include resource="org/springframework/boot/logging/logback/base.xml" />
-    <root level="ERROR" />
 
-    <logger name="com.wayneleo" level="DEBUG" />
-    <logger name="com.wayneleo.quickstart.embed.Bootstrap" level="INFO" />
-    <logger name="com.bridgeintelligent" level="INFO" />
-    <logger name="org.apache.zookeeper" level="INFO" />
-    <logger name="org.apache.kafka.common" level="INFO" />
-    <logger name="com.alibaba.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessor" level="ERROR" />
-    <logger name="org.hibernate.id.UUIDHexGenerator" level="ERROR" />
-    <logger name="org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator" level="ERROR" />
-    <logger name="springfox.documentation.swagger.readers.operation.OperationImplicitParameterReader" level="ERROR" />
+    <root level="WARN" />
 
+    <logger  level="INFO"   name="com.wayneleo" />
+    <logger  level="INFO"   name="com.wayneleo.quickstart.embed.Bootstrap" />
+    <logger  level="INFO"   name="com.bridgeintelligent" />
+    <logger  level="INFO"   name="org.apache.zookeeper" />
+    <logger  level="INFO"   name="org.apache.kafka.common" />
+    <logger  level="ERROR"  name="com.alibaba.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessor" />
+    <logger  level="WARN"   name="org.hibernate.boot.internal.SessionFactoryBuilderImpl" />
+    <logger  level="ERROR"  name="org.hibernate.id.UUIDHexGenerator" />
+    <logger  level="ERROR"  name="org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator" />
+    <logger  level="ERROR"  name="springfox.documentation.swagger.readers.operation.OperationImplicitParameterReader" />
 
 </configuration>

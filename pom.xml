@@ -1,5 +1,6 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wayneleo.quickstart</groupId>
@@ -12,6 +13,7 @@
         <module>framework</module>
         <module>publish</module>
         <module>transactional-sample</module>
+        <module>transactional-configcenter</module>
     </modules>
 
 
@@ -21,8 +23,11 @@
         <servlet.version>3.1.0</servlet.version>
         <spring.boot.version>1.5.4.RELEASE</spring.boot.version>
         <spring.swagger.version>2.4.0</spring.swagger.version>
+        <druid.version>1.1.10</druid.version>
         <jdbc.mysql.version>5.1.39</jdbc.mysql.version>
         <common.lang3.version>3.3.2</common.lang3.version>
+        <common.io.version>2.6</common.io.version>
+        <common.codec.version>1.11</common.codec.version>
     </properties>
 
 
@@ -76,6 +81,11 @@
             <version>${spring.swagger.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${jdbc.mysql.version}</version>
@@ -84,6 +94,16 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${common.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${common.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${common.codec.version}</version>
         </dependency>
     </dependencies>
 

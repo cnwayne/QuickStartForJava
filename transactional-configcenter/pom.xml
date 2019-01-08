@@ -8,7 +8,7 @@
         <artifactId>parent</artifactId>
         <version>0.2.0-SNAPSHOT</version>
     </parent>
-    <artifactId>transactional-sample</artifactId>
+    <artifactId>transactional-configcenter</artifactId>
     <packaging>pom</packaging>
 
     <dependencies>
@@ -17,18 +17,18 @@
             <artifactId>framework-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>publish-test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <modules>
-        <module>sample-ddd</module>
-        <module>sample-dubbo</module>
-        <module>sample-mvc</module>
-        <module>sample-osgi</module>
-        <module>sample-rsa</module>
-        <module>sample-security</module>
-        <module>sample-shared</module>
-        <module>sample-shiro</module>
-        <module>sample-spi</module>
+        <module>configcenter-api</module>
+        <module>configcenter-app</module>
+        <module>configcenter-model</module>
     </modules>
 
 </project>
